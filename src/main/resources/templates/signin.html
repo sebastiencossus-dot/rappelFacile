@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body class="signup-form">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-xl mx-auto">
+
+            <div class="card-body p-4 p-sm-5">
+                <div class="logo-card">
+                    <img class="logo" th:src="@{/images/logo.png}" alt="logo" />
+                </div>
+                <h4 class="card-title text-center mb-5 fw-lignt fs-5">Sign in</h4>
+
+                <form th:action="@{/signin}" method="post" class="form-signin">
+
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus/>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
