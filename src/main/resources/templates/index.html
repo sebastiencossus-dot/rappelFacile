@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <title>Accueil</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/images/logo.png" alt="LOGO" width="70" height="70">
+        </a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/transfer">Transfers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item" th:if="${currentUser != null}">
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" class="btn btn-link nav-link" value="Sign out">
+                    </form>
+                </li>
+                <li class="nav-item" th:if="${currentUser == null}">
+                    <a class="nav-link" href="/signin">Se connecter</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="bg-body">
+
+    <h1 class="text-center">
+        Accueil
+    </h1>
+    <div class="table-responsive">
+        <table class="table table-bordered align-center">
+            <thread>
+                <tr>
+                    <th scope="col">Identifiant</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thread>
+            <tbody>
+            <tr>
+                <td th:text="${currentUser.email}"></td>
+                <td th:text="${currentUser.account.amount}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="card-group">
+    <div class="card-body">
+        <img src="/images/logo.png" class="card-img-top p-4" alt="logo" height="150">
+    </div>
+    <div class="card-body">
+        <p class="gras"><a href="#" class="nav-link">Cash transfer</a></p>
+        <p><a href="#" class="nav-link"><small class="text-body-secondary">FAQ</small></a></p>
+        <p><a href="#" class="nav-link"><small class="text-body-secondary">Why using Flash Cash ?</small></a></p>
+    </div>
+    <div class="card-body">
+        <p class="gras"><a href="#" class="nav-link">Need help ?</a></p>
+        <p><a href="#" class="nav-link"><small class="text-body-secondary">Live chatFAQ</small></a></p>
+        <p><a href="#" class="nav-link"><small class="text-body-secondary">Contact us</small></a></p>
+    </div>
+    <div class="card-body">
+        <p class="gras"><a href="#" class="nav-link">About</a></p>
+        <p><a href="#" class="nav-link">Team</a></p>
+        <p><a href="#" class="nav-link">Locations</a></p>
+    </div>
+</div>
+
+</body>
+</html>

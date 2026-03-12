@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.82.0">
+    <title>Register form</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+</head>
+
+<body class="signup-form">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-img-left d-none d-md-flex">
+                </div>
+                <div class="card-body p-4 p-sm-5">
+                    <div class="logo-card">
+                        <img class="logo" src="" th:src="@{/images/logo.png}" alt=""/>
+                    </div>
+                    <h4 class="card-title text-center mb-5 fw-light fs-5">Sign up</h4>
+                    <form th:action="@{/signup}" th:object="${signUpForm}" method="POST">
+                        <div class="form-floating mb-3">
+                            <input type="text" th:field="*{firstName}" class="form-control floatingInput"
+                                   id="floatingInputUsername" placeholder="First Name"/>
+                            <label for="floatingInputUsername">First Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" th:field="*{lastName}" class="form-control floatingInput"
+                                   id="floatingInputLastName" placeholder="Last Name"/>
+                            <label for="floatingInputLastName">Last Name</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" th:field="*{email}" class="form-control floatingInput"
+                                   id="floatingInputEmail" placeholder="Email"/>
+
+                            <label for="floatingInputEmail">Email address</label>
+                        </div>
+                        <hr>
+                        <div class="form-floating mb-3">
+                            <input type="password" th:field="*{password}" class="form-control floatingPassword"
+                                   id="floatingPassword" placeholder="Password"/>
+
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" th:field="*{confirmPassword}" class="form-control floatingPassword"
+                                   id="floatingPasswordConfirm"
+                                   placeholder="Confirm Password"/>
+
+                            <label for="floatingPasswordConfirm">Confirm Password</label>
+                        </div>
+                        <div class="d-grid mb-2">
+                            <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">
+                                Sign up
+                            </button>
+                        </div>
+                        <a class="d-block text-center mt-2 small" href="/signin">Have an account? Sign In</a>
+                        <hr class="my-4">
+                        <div class="d-grid mb-2">
+                            <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
+                                <i class="fab fa-google me-2"></i> Sign up with Google
+                            </button>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                                <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+</html>

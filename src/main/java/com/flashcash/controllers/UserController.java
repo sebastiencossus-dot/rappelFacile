@@ -1,25 +1,43 @@
 package com.flashcash.controllers;
 
-import ch.qos.logback.core.model.Model;
-import com.flashcash.models.Transfer;
+
 import com.flashcash.models.User;
+import org.springframework.ui.Model;
+import com.flashcash.services.SessionService;
+import com.flashcash.services.UserService;
+import com.flashcash.services.form.SignUpForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
 
 @Controller
 public class UserController {
 
+    private final UserService userService;
+    private final SessionService sessionService;
 
-    @GetMapping("/")
-    public ModelAndView home(Model model) {
-        User user = sessionService.sessionUser();
-        model.addAttribute("user", user);
-        List<Transfer> transactions = transferService.findTransactions();
-        model.addAttribute("transfers", transactions);
-        return new ModelAndView("index");
+    public UserController(UserService userService, SessionService sessionService) {
+        this.userService = userService;
+        this.sessionService = sessionService;
     }
 
+    @GetMapping("/")
+    public ModelAndView home() {
+        User user = sessionService.sessionUser(); // récupère l'utilisateur
+        ModelAndView mav = new ModelAndView("index");
+        mav.addObject("currentUser", user); // passe à la vue
+        return mav;
+    }
+
+    @GetMapping("/signup")
+    public ModelAndView showRegisterForm() {
+        return new ModelAndView("signup", "signUpForm", new SignUpForm());
+    }
+
+    @PostMapping("/signup")
+    public ModelAndView processRequest(SignUpForm form) {
+        userService.registration(form);
+        return new ModelAndView("signin");
+    }
 }

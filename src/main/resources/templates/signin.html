@@ -1,20 +1,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.82.0">
+    <title>Sign In form</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+</head>
 <body class="signup-form">
 <div class="container">
     <div class="row">
-        <div class="col-lg-9 col-xl mx-auto">
+        <div class="col-lg-7 col-xl mx-auto">
 
             <div class="card-body p-4 p-sm-5">
-                <div class="logo-card">
+                <div class="logo-card-sm">
                     <img class="logo" th:src="@{/images/logo.png}" alt="logo" />
                 </div>
                 <h4 class="card-title text-center mb-5 fw-lignt fs-5">Sign in</h4>
 
                 <form th:action="@{/signin}" method="post" class="form-signin">
 
-                    <div class="form-floating mb-3">
+                    <div class="form-floating mb-3 ml-5 mr-5">
                         <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus/>
+                        <label>Email</label>
+
+                        <input type="password" name="password" class="form-control" placeholder="Mot de passe" required autofocus/>
+                        <label>Password</label>
+                        <button type="submit" class="form-control bg-blue">Connexion</button><br>
+                        <button ><a th:href="@{/signup}">Sign up</a></button>
+
                     </div>
+                </form>
+
             </div>
 
         </div>

@@ -14,8 +14,9 @@ public class User {
     private Integer id;
     @Column(unique = true)
     private String email;
-    private String firstname;
-    private String lastname;
+    @Column(name = "first_name")
+    private String firstName;
+    private String lastName;
     private String password;
     @ManyToMany
     private List<Contact> contacts;
