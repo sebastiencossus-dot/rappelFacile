@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <title>Add iban</title>
+</head>
+<body>
+<div class="container mt-5">
+
+
+    <div th:if="${account != null}" class="mt-3">
+        <h5>Détails du compte :</h5>
+        <p><strong>IBAN :</strong> <span th:text="${account.iban}"></span></p>
+        <p><strong>Montant :</strong> <span th:text="${account.amount}"></span> €</p>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <h2>Ajouter ou modifier votre IBAN</h2>
+    <form th:action="@{/account/iban}" method="post" class="mt-4">
+        <div class="mb-3">
+            <label for="iban" class="form-label">IBAN</label>
+            <input type="text" class="form-control" id="iban" name="iban"
+                   th:value="${account.iban}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+
+    <div th:if="${successIban}" class="alert alert-success mt-3">
+        IBAN enregistré avec succès !
+    </div>
+
+    <div th:if="${account != null}" class="mt-3">
+        <h5>Détails du compte :</h5>
+        <p><strong>IBAN :</strong> <span th:text="${account.iban}"></span></p>
+        <p><strong>Montant :</strong> <span th:text="${account.amount}"></span> €</p>
+    </div>
+</div>
+</body>
+</html>
