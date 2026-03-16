@@ -11,74 +11,101 @@
     <link href="/css/index.css" rel="stylesheet">
 </head>
 
-<body class="signup-form">
+<body class="bg-light">
+
 <div class="container">
-    <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
-                <div class="card-img-left d-none d-md-flex">
+
+    <div class="row justify-content-center mt-5">
+
+        <div class="col-md-6">
+
+            <div class="card shadow p-4">
+
+                <div class="text-center mb-4">
+                    <img th:src="@{/images/logo.png}" width="80">
+                    <h3 class="mt-3">Create your account</h3>
                 </div>
-                <div class="card-body p-4 p-sm-5">
-                    <div class="logo-card">
-                        <img class="logo" src="" th:src="@{/images/logo.png}" alt=""/>
+
+                <form th:action="@{/signup}" th:object="${signUpForm}" method="POST">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">First Name</label>
+
+                            <input type="text"
+                                   th:field="*{firstName}"
+                                   class="form-control">
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">Last Name</label>
+
+                            <input type="text"
+                                   th:field="*{lastName}"
+                                   class="form-control">
+
+                        </div>
+
                     </div>
-                    <h4 class="card-title text-center mb-5 fw-light fs-5">Sign up</h4>
-                    <form th:action="@{/signup}" th:object="${signUpForm}" method="POST">
-                        <div class="form-floating mb-3">
-                            <input type="text" th:field="*{firstName}" class="form-control floatingInput"
-                                   id="floatingInputUsername" placeholder="First Name"/>
-                            <label for="floatingInputUsername">First Name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" th:field="*{lastName}" class="form-control floatingInput"
-                                   id="floatingInputLastName" placeholder="Last Name"/>
-                            <label for="floatingInputLastName">Last Name</label>
-                        </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="text" th:field="*{email}" class="form-control floatingInput"
-                                   id="floatingInputEmail" placeholder="Email"/>
+                    <div class="mb-3">
 
-                            <label for="floatingInputEmail">Email address</label>
-                        </div>
-                        <hr>
-                        <div class="form-floating mb-3">
-                            <input type="password" th:field="*{password}" class="form-control floatingPassword"
-                                   id="floatingPassword" placeholder="Password"/>
+                        <label class="form-label">Email</label>
 
-                            <label for="floatingPassword">Password</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" th:field="*{confirmPassword}" class="form-control floatingPassword"
-                                   id="floatingPasswordConfirm"
-                                   placeholder="Confirm Password"/>
+                        <input type="text"
+                               th:field="*{email}"
+                               class="form-control">
 
-                            <label for="floatingPasswordConfirm">Confirm Password</label>
-                        </div>
-                        <div class="d-grid mb-2">
-                            <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">
-                                Sign up
-                            </button>
-                        </div>
-                        <a class="d-block text-center mt-2 small" href="/signin">Have an account? Sign In</a>
-                        <hr class="my-4">
-                        <div class="d-grid mb-2">
-                            <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
-                                <i class="fab fa-google me-2"></i> Sign up with Google
-                            </button>
-                        </div>
-                        <div class="d-grid">
-                            <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
-                                <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Password</label>
+
+                        <input type="password"
+                               th:field="*{password}"
+                               class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Confirm Password</label>
+
+                        <input type="password"
+                               th:field="*{confirmPassword}"
+                               class="form-control">
+
+                    </div>
+
+                    <div class="d-grid">
+
+                        <button class="btn btn-success">
+                            Create account
+                        </button>
+
+                    </div>
+
+                    <div class="text-center mt-3">
+
+                        <a href="/signin">
+                            Already have an account ? Sign in
+                        </a>
+
+                    </div>
+
+                </form>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
+
 </body>
-
-
-</html>

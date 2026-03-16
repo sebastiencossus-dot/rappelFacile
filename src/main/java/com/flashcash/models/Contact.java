@@ -1,9 +1,6 @@
 package com.flashcash.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -11,9 +8,12 @@ import lombok.Data;
 public class Contact {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
+    @JoinColumn(name = "user1_id")
     User user1;
     @ManyToOne
+    @JoinColumn(name = "user2_id")
     User user2;
 }

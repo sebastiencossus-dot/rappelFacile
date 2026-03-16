@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <title>Transfer to your bank</title>
+</head>
+<body>
+<div th:insert="~{header :: header}"></div>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card p-4">
+
+                <h3 class="mb-4 text-center">Transfer to your bank</h3>
+
+                <p th:if="${account}">
+                    <strong>IBAN :</strong>
+                    <span th:text="${account.iban}"></span>
+                </p>
+
+                <p th:if="${account}">
+                    <strong>Balance :</strong>
+                    <span th:text="${account.amount}"></span> €
+                </p>
+
+                <form th:if="${account}" action="/banktransfer/withdraw" method="post">
+
+                    <input type="hidden"
+                           th:name="${_csrf.parameterName}"
+                           th:value="${_csrf.token}" />
+
+                    <input type="hidden"
+                           name="accountId"
+                           th:value="${account.accountId}">
+
+                    <div class="mb-3">
+                        <label class="form-label">Amount</label>
+
+                        <input type="number"
+                               class="form-control"
+                               name="amount"
+                               step="0.01"
+                               required>
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-primary">
+                            Withdraw
+                        </button>
+                    </div>
+
+                </form>
+
+                <p class="text-danger mt-3"
+                   th:if="${error}"
+                   th:text="${error}"></p>
+
+                <p class="text-success mt-3"
+                   th:if="${message}"
+                   th:text="${message}"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div th:insert="~{footer :: footer}"></div>

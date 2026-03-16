@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <title>Add Contact</title>
+</head>
+<body>
+<div th:insert="~{header :: header}"></div>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card p-4">
+
+                <h3 class="mb-4 text-center">Add Contact</h3>
+
+                <form action="/addcontact" method="post">
+
+                    <input type="hidden"
+                           th:name="${_csrf.parameterName}"
+                           th:value="${_csrf.token}" />
+
+                    <div class="mb-3">
+                        <label class="form-label">Email du contact</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            Add Contact
+                        </button>
+                    </div>
+
+                </form>
+
+                <p class="text-center mt-3 text-success"
+                   th:if="${message}"
+                   th:text="${message}"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <h3 class="mt-5">My Contacts</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="c : ${contacts}">
+            <td th:text="${c.user2 != null ? c.user2.email : 'n/a'}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:insert="~{footer :: footer}"></div>

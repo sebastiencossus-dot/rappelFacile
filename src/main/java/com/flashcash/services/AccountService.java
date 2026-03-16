@@ -37,4 +37,21 @@ public class AccountService {
 
         accountRepository.save(account);
     }
+
+    public void withdraw(Integer accountId, double amount){
+
+        Account account = accountRepository.findById(accountId)
+                .orElseThrow();
+
+        if(account.getAmount() < amount){
+            throw new RuntimeException("Solde insuffisant");
+        }
+
+        account.setAmount(account.getAmount() - amount);
+
+        accountRepository.save(account);
+
+        System.out.println("Virement vers IBAN : " + account.getIban());
+    }
+
 }

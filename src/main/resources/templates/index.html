@@ -6,86 +6,81 @@
     <meta charset="UTF-8">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/index.css" rel="stylesheet">
-    <title>Accueil</title>
+    <title>Transfer to your bank</title>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="/images/logo.png" alt="LOGO" width="70" height="70">
-        </a>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/transfer">Transfers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/profile">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item" th:if="${currentUser != null}">
-                    <form th:action="@{/logout}" method="post">
-                        <input type="submit" class="btn btn-link nav-link" value="Sign out">
-                    </form>
-                </li>
-                <li class="nav-item" th:if="${currentUser == null}">
-                    <a class="nav-link" href="/signin">Se connecter</a>
-                </li>
+<div th:insert="~{header :: header}"></div>
 
+<div class="container mt-5">
 
-            </ul>
+    <div class="card p-4 mb-4">
+
+        <h4>Welcome</h4>
+
+        <p>
+            <span th:text="${currentUser.email}"></span>
+        </p>
+
+        <h2 class="text-success">
+            <span th:text="${currentUser.account.amount}"></span> €
+        </h2>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="card text-center p-3">
+
+                <h5>Add cash</h5>
+
+                <p>Add money instantly</p>
+
+                <a href="/paycard"
+                   class="btn btn-outline-primary">
+                    Start
+                </a>
+
+            </div>
+
         </div>
-    </div>
-</nav>
-<div class="bg-body">
 
-    <h1 class="text-center">
-        Accueil
-    </h1>
-    <div class="table-responsive">
-        <table class="table table-bordered align-center">
-            <thread>
-                <tr>
-                    <th scope="col">Identifiant</th>
-                    <th scope="col">Amount</th>
-                </tr>
-            </thread>
-            <tbody>
-            <tr>
-                <td th:text="${currentUser.email}"></td>
-                <td th:text="${currentUser.account.amount}"></td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="col-md-4">
+
+            <div class="card text-center p-3">
+
+                <h5>Transfer to bank</h5>
+
+                <p>Withdraw money</p>
+
+                <a href="/banktransfer"
+                   class="btn btn-outline-primary">
+                    Start
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card text-center p-3">
+
+                <h5>Add IBAN</h5>
+
+                <p>Add your bank account</p>
+
+                <a href="/account/iban"
+                   class="btn btn-outline-primary">
+                    Start
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
+
 </div>
 
-
-<div class="card-group">
-    <div class="card-body">
-        <img src="/images/logo.png" class="card-img-top p-4" alt="logo" height="150">
-    </div>
-    <div class="card-body">
-        <p class="gras"><a href="/paycard" class="nav-link">Cash transfer</a></p>
-        <p><a href="account/iban" class="nav-link"><small class="text-body-secondary">FAQ</small></a></p>
-        <p><a href="#" class="nav-link"><small class="text-body-secondary">Why using Flash Cash ?</small></a></p>
-    </div>
-    <div class="card-body">
-        <p class="gras"><a href="#" class="nav-link">Need help ?</a></p>
-        <p><a href="#" class="nav-link"><small class="text-body-secondary">Live chatFAQ</small></a></p>
-        <p><a href="#" class="nav-link"><small class="text-body-secondary">Contact us</small></a></p>
-    </div>
-    <div class="card-body">
-        <p class="gras"><a href="#" class="nav-link">About</a></p>
-        <p><a href="#" class="nav-link">Team</a></p>
-        <p><a href="#" class="nav-link">Locations</a></p>
-    </div>
-</div>
-
-</body>
-</html>
+<div th:insert="~{footer :: footer}"></div>
