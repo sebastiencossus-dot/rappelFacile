@@ -6,7 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface TransferRepository extends JpaRepository<Transfer, Integer> {
+
     List<Transfer> findByFromIdOrderByDateDesc(Integer userId);
 
-    List<Transfer> findByFromIdOrToId(Integer userId, Integer userId1);
+    List<Transfer> findByFromIdOrToId(Integer fromId, Integer toId);
+
+    List<Transfer> findByFromIdOrToIdOrderByDateDesc(Integer fromId, Integer toId);
 }

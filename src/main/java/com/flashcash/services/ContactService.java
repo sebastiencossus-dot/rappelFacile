@@ -27,6 +27,16 @@ public class ContactService {
         User user2 = userRepository.findUsersByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User with this email not found"));
 
+        if (user1.getId().equals(user2.getId())) {
+            throw new RuntimeException("Vous ne pouvez pas vous ajouter vous-même");
+        }
+
+        boolean exists = contactRepository.existsByUser1IdAndUser2Id(user1.getId(), user2.getId());
+
+        if (exists) {
+            throw new RuntimeException("Ce contact existe déjà");
+        }
+
         Contact contact = new Contact();
 
         contact.setUser1(user1);   // utilisateur connecté
@@ -36,7 +46,7 @@ public class ContactService {
     }
 
     public List<Contact> getContacts(Integer userId){
-        return contactRepository.findByUser1Id(userId);
+        return contactRepository.findByUser1IdOrderByUser2EmailAsc(userId);
     }
 
 }

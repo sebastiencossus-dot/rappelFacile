@@ -39,7 +39,19 @@
                     </div>
 
                 </form>
-
+                <h3 class="mt-5">My Contacts</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="c : ${contacts}">
+                        <td th:text="${c.user2 != null ? c.user2.email : 'n/a'}"></td>
+                    </tr>
+                    </tbody>
+                </table>
                 <p class="text-center mt-3 text-success"
                    th:if="${message}"
                    th:text="${message}"></p>
@@ -49,19 +61,7 @@
         </div>
 
     </div>
-    <h3 class="mt-5">My Contacts</h3>
-    <table>
-        <thead>
-        <tr>
-            <th>Email</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="c : ${contacts}">
-            <td th:text="${c.user2 != null ? c.user2.email : 'n/a'}"></td>
-        </tr>
-        </tbody>
-    </table>
+
 </div>
 
 <div th:insert="~{footer :: footer}"></div>

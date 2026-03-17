@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <title>Mon profil</title>
+</head>
+
+<div th:insert="~{header :: header}"></div>
+
+<div class="container mt-5">
+
+    <!-- Messages -->
+    <div th:if="${success}" class="alert alert-success">
+        <span th:text="${success}"></span>
+    </div>
+
+    <div th:if="${error}" class="alert alert-danger">
+        <span th:text="${error}"></span>
+    </div>
+
+    <!-- Infos utilisateur -->
+    <div class="card p-4 mb-4">
+        <h3>Mon profil</h3>
+
+        <p><strong>Email :</strong> <span th:text="${currentUser.email}"></span></p>
+        <p><strong>Nom :</strong>
+            <span th:text="${currentUser.firstName}"></span>
+            <span th:text="${currentUser.lastName}"></span>
+        </p>
+
+        <p><strong>Solde :</strong>
+            <span class="text-success"
+                  th:text="${currentUser.account.amount} + ' €'"></span>
+        </p>
+    </div>
+
+    <!-- Formulaire mot de passe -->
+    <div class="card p-4">
+        <h4>Changer le mot de passe</h4>
+
+        <form method="post" action="/profile/password">
+            <input type="hidden"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}" />
+
+            <div class="mb-3">
+                <label>Ancien mot de passe</label>
+                <input type="password" name="oldPassword"
+                       class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Nouveau mot de passe</label>
+                <input type="password" name="newPassword"
+                       class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Confirmer le mot de passe</label>
+                <input type="password" name="confirmPassword"
+                       class="form-control" required>
+            </div>
+
+            <button class="btn btn-primary">
+                Modifier
+            </button>
+
+        </form>
+    </div>
+
+
+</div>
+
+<div th:insert="~{footer :: footer}"></div>

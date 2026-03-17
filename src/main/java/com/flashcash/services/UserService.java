@@ -38,4 +38,29 @@ public class UserService {
 
 
     }
+
+    public void changePassword(User user,
+                               String oldPassword,
+                               String newPassword,
+                               String confirmPassword) {
+
+        // Vérifier ancien mot de passe
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+            throw new RuntimeException("Ancien mot de passe incorrect");
+        }
+
+        // Vérifier confirmation
+        if (!newPassword.equals(confirmPassword)) {
+            throw new RuntimeException("Les mots de passe ne correspondent pas");
+        }
+
+        // Sécurité minimum
+        if (newPassword.length() < 6) {
+            throw new RuntimeException("Mot de passe trop court (min 6 caractères)");
+        }
+
+        // Hash + sauvegarde
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+    }
 }

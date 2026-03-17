@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface ContactRepository extends JpaRepository<Contact, Integer> {
     List<Contact> findByUser1Id(Integer userId);
+    List<Contact> findByUser1IdOrderByUser2EmailAsc(Integer userId);
+    boolean existsByUser1IdAndUser2Id(Integer userId, Integer user2Id);
 }
