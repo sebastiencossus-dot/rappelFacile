@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.jcb826</groupId>
-    <artifactId>flash-cash</artifactId>
+    <artifactId>RappelFacile</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>flash-cash</name>
     <description>A cash transfer application</description>

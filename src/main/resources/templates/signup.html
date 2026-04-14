@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.82.0">
     <title>Register form</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/index.css" rel="stylesheet">
+    <link href="/css/style.scss" rel="stylesheet">
 </head>
 
 <body class="bg-light">
@@ -23,7 +23,7 @@
 
                 <div class="text-center mb-4">
                     <img th:src="@{/images/logo.png}" width="80">
-                    <h3 class="mt-3">Create your account</h3>
+                    <h3 class="mt-3">Créer votre comptet</h3>
                 </div>
 
                 <form th:action="@{/signup}" th:object="${signUpForm}" method="POST">
@@ -32,20 +32,20 @@
 
                         <div class="col-md-6 mb-3">
 
-                            <label class="form-label">First Name</label>
+                            <label class="form-label">Nom</label>
 
                             <input type="text"
-                                   th:field="*{firstName}"
+                                   th:field="*{nom}"
                                    class="form-control">
 
                         </div>
 
                         <div class="col-md-6 mb-3">
 
-                            <label class="form-label">Last Name</label>
+                            <label class="form-label">Prenom</label>
 
                             <input type="text"
-                                   th:field="*{lastName}"
+                                   th:field="*{prenom}"
                                    class="form-control">
 
                         </div>
@@ -64,7 +64,27 @@
 
                     <div class="mb-3">
 
-                        <label class="form-label">Password</label>
+                        <label class="form-label">Telephone mobile</label>
+
+                        <input type="text"
+                               th:field="*{tel}"
+                               class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Photo</label>
+
+                        <input type="text"
+                               th:field="*{photo}"
+                               class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Mot de passe</label>
 
                         <input type="password"
                                th:field="*{password}"
@@ -74,7 +94,7 @@
 
                     <div class="mb-3">
 
-                        <label class="form-label">Confirm Password</label>
+                        <label class="form-label">Confirmez votre mot de passe</label>
 
                         <input type="password"
                                th:field="*{confirmPassword}"
@@ -85,7 +105,7 @@
                     <div class="d-grid">
 
                         <button class="btn btn-success">
-                            Create account
+                            Valider
                         </button>
 
                     </div>
@@ -93,7 +113,7 @@
                     <div class="text-center mt-3">
 
                         <a href="/signin">
-                            Already have an account ? Sign in
+                            Vous avez deja un compte, identifiez-vous !
                         </a>
 
                     </div>

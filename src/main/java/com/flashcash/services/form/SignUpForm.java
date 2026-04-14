@@ -1,26 +1,28 @@
 package com.flashcash.services.form;
 
 public class SignUpForm {
-    private String lastName;
-    private String firstName;
+    private String nom;
+    private String prenom;
     private String email;
+    private String tel;
+    private String photo;
     private String password;
     private String ConfirmPassword;
 
-    public String getLastName() {
-        return lastName;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getNom() {
+        return nom;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setnom(String nom) {
+        this.nom = nom;
     }
 
     public String getEmail() {
@@ -29,6 +31,20 @@ public class SignUpForm {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getPassword() {

@@ -1,37 +1,32 @@
+<body>
+<div class="Container">
+    <header class="HeaderBox">
+        <img class="HeaderBox-logo" src="images/logo.png" alt="Logo Rappel Facile">
+        <h1 class="HeaderBox-title">Rappel Facile</h1>
+        <div class="NavBox">
+            <i class="fa-solid fa-bars NavBox-burger"></i>
+            <i class="fa-solid fa-close NavBox-close"></i>
+            <div class="NavBox-toggleMenu">
 
-
-<div th:fragment="header">
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="/images/logo.png" alt="LOGO" width="70" height="70">
-        </a>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/transfer">Transfers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/profile">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
-                <li class="nav-item" th:if="${currentUser != null}">
-                    <form th:action="@{/logout}" method="post">
-                        <input type="submit" class="btn btn-link nav-link" value="Sign out">
-                    </form>
-                </li>
-                <li class="nav-item" th:if="${currentUser == null}">
-                    <a class="nav-link" href="/signin">Se connecter</a>
-                </li>
-
-
-            </ul>
+                <nav class="NavBox-menuPrincipal">
+                    <a  class="NavBox-menuPrincipal-link" href="">Vos rendez-vous</a>
+                    <a href=""  class="NavBox-menuPrincipal-link">Vos prestataires</a>
+                    <a href=""  class="NavBox-menuPrincipal-link">Vos statistiques</a>
+                </nav>
+                <div class="NavBox-user">
+                    <img class="NavBox-user-avatar" src="images/avatar.jpg" alt="Avatar utilisateur">
+                    <p>Jessica</p>
+                    <li class="nav-item" th:if="${currentUser != null}">
+                        <form th:action="@{/logout}" method="post">
+                            <input type="submit" class="btn btn-link nav-link" value="Sign out">
+                        </form>
+                    </li>
+                </div>
+                <nav class="NavBox-menuSecondaire">
+                    <a class="NavBox-menuSecondaire-link" href="">Contact</a>
+                    <a class="NavBox-menuSecondaire-link" href="">Cgu</a>
+                    <a class="NavBox-menuSecondaire-link" href="">Rgpd</a>
+                </nav>
+            </div>
         </div>
-    </div>
-</nav>
-</div>
+    </header>

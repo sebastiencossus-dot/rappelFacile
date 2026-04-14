@@ -2,9 +2,9 @@ package com.flashcash.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.engine.internal.Cascade;
 
-import java.util.List;
+
+
 @Data
 @Entity
 public class User {
@@ -14,14 +14,13 @@ public class User {
     private Integer id;
     @Column(unique = true)
     private String email;
-    @Column(name = "first_name")
-    private String firstName;
-    private String lastName;
-    private String password;
-    @ManyToMany
-    private List<Contact> contacts;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Account account;
+    private String mdp;
+    private String nom;
+    private String prenom;
+    private String tel;
+    private String photo;
+    private boolean active;
+
 
 
 

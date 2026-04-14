@@ -5,82 +5,94 @@
 <head>
     <meta charset="UTF-8">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/index.css" rel="stylesheet">
-    <title>Transfer to your bank</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <title>Rappel Facile</title>
 </head>
 <div th:insert="~{header :: header}"></div>
 
-<div class="container mt-5">
+<main class="ContentBox">
+    <h2 class="ContentBox-title">Vos rendez-vous</h2>
+    <div class="ContentBox-rdvBox">
+        <div class="ContentBox-rdvBox">
+            <section class="ContentBox-rdvBox RdvBox jour">
+                <h2 class="RdvBox-title">Rendez-vous du jour</h2>
+                <div class="RdvBox-card">
+                    <a href="detailRdv.html" class="RdvBox-card-link"><i class="fa-regular fa-alarm-clock RdvBox-card-clock"></i></a>
+                    <p class="RdvBox-card-text"><span class="RdvBox-card-text-time">10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                    </p>
+                    <p class="RdvBox-card-prestataire">Dr. Martin Dupont</p>
 
-    <div class="card p-4 mb-4">
+                </div>
+                <div class="RdvBox-card">
+                    <i class="fa-regular fa-alarm-clock RdvBox-card-clock"></i>
+                    <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                    </p>
+                    <p class="RdvBox-card-prestataire">Dr. Martin Dupont</p>
 
-        <h4>Welcome</h4>
+                </div>
 
-        <p>
-            <span th:text="${currentUser.email}"></span>
-        </p>
+            </section>
+            <section class="ContentBox-rdvBox RdvBox attente">
+                <h2 class="RdvBox-title">En attente de validation</h2>
+                <div class="RdvBox-card">
+                    <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
+                    <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                    </p>
+                    <p class="RdvBox-card-prestataire"><i class="fa-regular fa-square-check"></i> <i class="fa-solid fa-ban"></i>                 </p>
 
-        <h2 class="text-success">
-            <span th:text="${currentUser.account.amount}"></span> €
-        </h2>
+                </div>
 
+
+            </section>
+        </div>
+        <section class="ContentBox-rdvBox RdvBox autre">
+            <h2 class="RdvBox-title">Autres RDV</h2>
+            <div class="RdvBox-card">
+                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
+                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                </p>
+                <p class="RdvBox-card-prestataire">Modifier Details</p>
+
+            </div>
+            <div class="RdvBox-card">
+                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
+                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                </p>
+                <p class="RdvBox-card-prestataire">Modifier Details</p>
+
+            </div>
+            <div class="RdvBox-card">
+                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
+                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                </p>
+                <p class="RdvBox-card-prestataire">Modifier Details</p>
+
+            </div>
+            <div class="RdvBox-card">
+                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
+                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                </p>
+                <p class="RdvBox-card-prestataire">Modifier Details</p>
+
+            </div>
+            <div class="RdvBox-card">
+                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
+                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                </p>
+                <p class="RdvBox-card-prestataire">Modifier Details</p>
+
+            </div>
+            <div class="RdvBox-card">
+                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
+                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                </p>
+                <p class="RdvBox-card-prestataire">Modifier Details</p>
+
+            </div>
+
+
+        </section>
     </div>
-
-    <div class="row g-4">
-
-        <div class="col-md-4">
-
-            <div class="card text-center p-3">
-
-                <h5>Add cash</h5>
-
-                <p>Add money instantly</p>
-
-                <a href="/paycard"
-                   class="btn btn-outline-primary">
-                    Start
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="card text-center p-3">
-
-                <h5>Transfer to bank</h5>
-
-                <p>Withdraw money</p>
-
-                <a href="/banktransfer"
-                   class="btn btn-outline-primary">
-                    Start
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="card text-center p-3">
-
-                <h5>Add IBAN</h5>
-
-                <p>Add your bank account</p>
-
-                <a href="/account/iban"
-                   class="btn btn-outline-primary">
-                    Start
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
+</main>
 
 <div th:insert="~{footer :: footer}"></div>
