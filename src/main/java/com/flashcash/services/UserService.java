@@ -30,7 +30,7 @@ public class UserService {
         user.setNom(form.getNom());
         user.setEmail(form.getEmail());
         user.setTel(form.getTel());
-        user.setPhoto(form.getPhoto());
+
         user.setMdp(passwordEncoder.encode(form.getPassword()));
         return userRepository.save(user);
 

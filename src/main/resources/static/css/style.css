@@ -19,19 +19,20 @@ body {
 
 .HeaderBox {
   display: flex;
+  height: 100%
   align-items: center;
 }
 .HeaderBox-logo {
   height: 50px;
-  margin: 10px;
-  padding-top: 30px;
+  margin: 0px;
+  padding-top: 0px;
 }
 .HeaderBox-title {
   color: #F79BC5;
   font-family: "Roboto", sans-serif;
   font-size: 26px;
   margin: 0;
-  padding-top: 30px;
+  padding-top: 0px;
 }
 .HeaderBox .NavBox {
   width: 100%;
@@ -128,12 +129,18 @@ body {
   grid-row: 1/2;
   padding-right: 10px;
 }
-.HeaderBox .NavBox-user a {
+
+.HeaderBox .NavBox-user form {
   grid-column: 2/2;
   grid-row: 1/1;
   text-decoration: none;
   font-size: 10px;
   padding-top: 15px;
+}
+.Header .NavBox-user button {
+    border: none;
+    background: none;
+
 }
 .HeaderBox .NavBox-user a:link, .HeaderBox .NavBox-user a:visited {
   color: #000000;

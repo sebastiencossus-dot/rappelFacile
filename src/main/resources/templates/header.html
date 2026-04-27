@@ -11,16 +11,18 @@
                 <nav class="NavBox-menuPrincipal">
                     <a  class="NavBox-menuPrincipal-link" href="">Vos rendez-vous</a>
                     <a href=""  class="NavBox-menuPrincipal-link">Vos prestataires</a>
-                    <a href=""  class="NavBox-menuPrincipal-link">Vos statistiques</a>
+                    <a href="/charts"  class="NavBox-menuPrincipal-link">Vos statistiques</a>
                 </nav>
                 <div class="NavBox-user">
-                    <img class="NavBox-user-avatar" src="images/avatar.jpg" alt="Avatar utilisateur">
-                    <p>Jessica</p>
-                    <li class="nav-item" th:if="${currentUser != null}">
-                        <form th:action="@{/logout}" method="post">
-                            <input type="submit" class="btn btn-link nav-link" value="Sign out">
-                        </form>
-                    </li>
+                    <img class="NavBox-user-avatar"
+                         th:src="@{'/images/' + ${currentUser.photo}}"
+                         alt="Avatar utilisateur">
+                    <p th:text="${currentUser.prenom}">Prenom</p>
+                    <form th:action="@{/logout}" method="post" class="NavBox-user-logout">
+                        <button type="submit" class="NavBox-user-logoutBtn">
+                            log out
+                        </button>
+                    </form>
                 </div>
                 <nav class="NavBox-menuSecondaire">
                     <a class="NavBox-menuSecondaire-link" href="">Contact</a>

@@ -15,19 +15,38 @@
     <div class="ContentBox-rdvBox">
         <div class="ContentBox-rdvBox">
             <section class="ContentBox-rdvBox RdvBox jour">
-                <h2 class="RdvBox-title">Rendez-vous du jour</h2>
-                <div class="RdvBox-card">
-                    <a href="detailRdv.html" class="RdvBox-card-link"><i class="fa-regular fa-alarm-clock RdvBox-card-clock"></i></a>
-                    <p class="RdvBox-card-text"><span class="RdvBox-card-text-time">10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
-                    </p>
-                    <p class="RdvBox-card-prestataire">Dr. Martin Dupont</p>
 
-                </div>
-                <div class="RdvBox-card">
-                    <i class="fa-regular fa-alarm-clock RdvBox-card-clock"></i>
-                    <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+                <h2 class="RdvBox-title">Rendez-vous du jour</h2>
+
+                <div th:each="rdv : ${rdvs}"
+                     th:if="${rdv.siOk == 1}"
+                     class="RdvBox-card">
+
+                    <a th:href="@{'/rdv/' + ${rdv.idRdv}}"
+                       class="RdvBox-card-link">
+
+                        <i class="fa-regular fa-alarm-clock RdvBox-card-clock"></i>
+                    </a>
+
+                    <p class="RdvBox-card-text">
+
+            <span class="RdvBox-card-text-time"
+                  th:text="${rdv.dateRdv}">
+                10:00
+            </span>
+
+                        <br>
+
+                        <span class="RdvBox-card-text-motif"
+                              th:text="${rdv.profession.nom}">
+                Motif
+            </span>
                     </p>
-                    <p class="RdvBox-card-prestataire">Dr. Martin Dupont</p>
+
+                    <p class="RdvBox-card-prestataire"
+                       th:text="${rdv.prestataire.nom + ' ' + rdv.prestataire.prenom}">
+                        Prestataire
+                    </p>
 
                 </div>
 
@@ -92,6 +111,7 @@
 
 
         </section>
+
     </div>
 </main>
 
