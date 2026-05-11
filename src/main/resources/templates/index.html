@@ -19,7 +19,7 @@
                 <h2 class="RdvBox-title">Rendez-vous du jour</h2>
 
                 <div th:each="rdv : ${rdvs}"
-                     th:if="${rdv.siOk == 1}"
+                     th:if="${rdv.isOk == 1}"
                      class="RdvBox-card">
 
                     <a th:href="@{'/rdv/' + ${rdv.idRdv}}"
