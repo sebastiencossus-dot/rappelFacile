@@ -18,8 +18,8 @@ public class RDV {
     private LocalDate dateRdv;
     private Integer isOK;
 
-    private Prestataire prestataire;
-    private Profession profession;
+    private Prestataires prestataires;
+    private Professions professions;
 
 
 }

@@ -2,6 +2,10 @@ package com.webapp.controllers;
 
 
 
+import com.webapp.models.User;
+import com.webapp.repositories.RdvRepository;
+import com.webapp.services.SessionService;
+import com.webapp.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -22,7 +26,7 @@ public class ChartsController {
     private final SessionService sessionService;
     private final RdvRepository rdvRepository;
 
-    public ChartsController(UserService userService, SessionService sessionService,  RdvRepository rdvRepository) {
+    public ChartsController(UserService userService, SessionService sessionService, RdvRepository rdvRepository) {
 
         this.sessionService = sessionService;
         this.rdvRepository = rdvRepository;
