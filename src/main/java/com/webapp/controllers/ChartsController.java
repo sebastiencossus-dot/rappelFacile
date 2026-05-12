@@ -1,9 +1,5 @@
-package com.flashcash.controllers;
+package com.webapp.controllers;
 
-import com.flashcash.models.User;
-import com.flashcash.repositories.RdvRepository;
-import com.flashcash.services.SessionService;
-import com.flashcash.services.UserService;
 
 
 import org.springframework.stereotype.Controller;

@@ -1,7 +1,8 @@
-package com.flashcash.repositories;
+package com.webapp.repositories;
 
-import com.flashcash.models.User;
 
+
+import com.webapp.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

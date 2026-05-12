@@ -1,7 +1,6 @@
-package com.flashcash.services;
+package com.webapp.services;
 
-import com.flashcash.models.User;
-import com.flashcash.repositories.UserRepository;
+
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

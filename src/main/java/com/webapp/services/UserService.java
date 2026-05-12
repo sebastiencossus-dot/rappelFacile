@@ -1,12 +1,11 @@
-package com.flashcash.services;
+package com.webapp.services;
 
-import com.flashcash.models.User;
-import com.flashcash.repositories.UserRepository;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
-import com.flashcash.services.form.SignUpForm;
+import com.webapp.services.form.SignUpForm;
 
 @Service
 public class UserService {

@@ -1,11 +1,9 @@
-package com.flashcash.controllers;
+package com.webapp.controllers;
 
 
-import com.flashcash.models.User;
 
-import com.flashcash.services.SessionService;
-import com.flashcash.services.UserService;
-import com.flashcash.services.form.SignUpForm;
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +20,7 @@ public class UserController {
     private final SessionService sessionService;
 
 
-    public UserController(UserService userService, SessionService sessionService) {
+    public UserController(com.Webapp.services.UserService userService, SessionService sessionService) {
         this.userService = userService;
         this.sessionService = sessionService;
 

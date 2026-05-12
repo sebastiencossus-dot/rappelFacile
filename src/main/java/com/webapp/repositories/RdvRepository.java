@@ -1,6 +1,6 @@
-package com.flashcash.repositories;
+package com.webapp.repositories;
 
-import com.flashcash.models.RDV;
+import com.webapp.models.RDV;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

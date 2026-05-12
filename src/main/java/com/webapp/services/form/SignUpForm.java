@@ -1,4 +1,4 @@
-package com.flashcash.services.form;
+package com.webapp.services.form;
 
 public class SignUpForm {
     private String nom;
