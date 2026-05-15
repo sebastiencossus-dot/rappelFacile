@@ -18,11 +18,13 @@
 
                 <h2 class="RdvBox-title">Rendez-vous du jour</h2>
 
-                <div th:each="rdv : ${rdvs}"
-                     th:if="${rdv.isOk == 1}"
+                <div th:if="${#lists.isEmpty(rdvJour)}">
+                    <p>Aucun rendez-vous aujourd’hui</p>
+                </div>
+                <div th:each="rdv : ${rdvJour ?: {}}"
                      class="RdvBox-card">
 
-                    <a th:href="@{'/rdv/' + ${rdv.idRdv}}"
+                    <a th:href="@{'/rdv/' + ${rdv.id}}"
                        class="RdvBox-card-link">
 
                         <i class="fa-regular fa-alarm-clock RdvBox-card-clock"></i>
@@ -31,20 +33,20 @@
                     <p class="RdvBox-card-text">
 
             <span class="RdvBox-card-text-time"
-                  th:text="${rdv.dateRdv}">
+                  th:text="${#temporals.format(rdv.dateRdv, 'dd/MM/yyyy')}">
                 10:00
             </span>
 
                         <br>
 
                         <span class="RdvBox-card-text-motif"
-                              th:text="${rdv.profession.nom}">
+                              th:text="${rdv.professions.nom}">
                 Motif
             </span>
                     </p>
 
                     <p class="RdvBox-card-prestataire"
-                       th:text="${rdv.prestataire.nom + ' ' + rdv.prestataire.prenom}">
+                       th:text="${rdv.prestataires.nom + ' ' + rdv.prestataires.prenom}">
                         Prestataire
                     </p>
 
@@ -52,63 +54,70 @@
 
             </section>
             <section class="ContentBox-rdvBox RdvBox attente">
+
                 <h2 class="RdvBox-title">En attente de validation</h2>
-                <div class="RdvBox-card">
+
+                <div th:if="${#lists.isEmpty(rdvAttente)}">
+                    <p>Aucun rendez-vous en attente de validation</p>
+                </div>
+                <div th:each="rdv : ${rdvAttente ?: {}}"
+                     class="RdvBox-card">
+
                     <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
-                    <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+
+                    <p class="RdvBox-card-text">
+
+            <span class="RdvBox-card-text-time"
+                  th:text="${#temporals.format(rdv.dateRdv, 'dd/MM/yyyy')}">
+            </span>
+
+                        <br>
+
+                        <span class="RdvBox-card-text-motif"
+                              th:text="${rdv.professions.nom}">
+            </span>
                     </p>
-                    <p class="RdvBox-card-prestataire"><i class="fa-regular fa-square-check"></i> <i class="fa-solid fa-ban"></i>                 </p>
+
+                    <p class="RdvBox-card-prestataire">
+                        <i class="fa-regular fa-square-check"></i>
+                        <i class="fa-solid fa-ban"></i>
+                    </p>
 
                 </div>
-
 
             </section>
         </div>
         <section class="ContentBox-rdvBox RdvBox autre">
+
             <h2 class="RdvBox-title">Autres RDV</h2>
-            <div class="RdvBox-card">
+            <div th:if="${#lists.isEmpty(rdvAutres)}">
+                <p>Aucun autre rendez-vous a venir</p>
+            </div>
+            <div th:each="rdv : ${rdvAutres ?: {}}"
+                 class="RdvBox-card">
+
                 <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
-                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
+
+                <p class="RdvBox-card-text">
+
+            <span class="RdvBox-card-text-time"
+                  th:text="${#temporals.format(rdv.dateRdv, 'dd/MM/yyyy')}">
+            </span>
+
+                    <br>
+
+                    <span class="RdvBox-card-text-motif"
+                          th:text="${rdv.professions.nom}">
+            </span>
                 </p>
-                <p class="RdvBox-card-prestataire">Modifier Details</p>
+
+                <p class="RdvBox-card-prestataire">
+                    <a th:href="@{'/rdv/edit/' + ${rdv.id}}">
+                        Modifier détails
+                    </a>
+                </p>
 
             </div>
-            <div class="RdvBox-card">
-                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
-                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
-                </p>
-                <p class="RdvBox-card-prestataire">Modifier Details</p>
-
-            </div>
-            <div class="RdvBox-card">
-                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
-                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
-                </p>
-                <p class="RdvBox-card-prestataire">Modifier Details</p>
-
-            </div>
-            <div class="RdvBox-card">
-                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
-                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
-                </p>
-                <p class="RdvBox-card-prestataire">Modifier Details</p>
-
-            </div>
-            <div class="RdvBox-card">
-                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
-                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
-                </p>
-                <p class="RdvBox-card-prestataire">Modifier Details</p>
-
-            </div>
-            <div class="RdvBox-card">
-                <i class="fa-regular fa-calendar RdvBox-card-clock"></i>
-                <p class="RdvBox-card-text"><span class="RdvBox-card-text-time"><span class="RdvBox-card-text-time">15 octobre 2023 à 10:00</span><br><span class="RdvBox-card-text-motif">Prescription médicale</span>
-                </p>
-                <p class="RdvBox-card-prestataire">Modifier Details</p>
-
-            </div>
-
 
         </section>
 

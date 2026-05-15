@@ -20,11 +20,19 @@ public class SecurityConfiguration {
                         .requestMatchers("/css/bootstrap.min.css", "/index.css", "/images/**", "/signin", "/signup")
                         .permitAll().anyRequest().authenticated()
                 )
-                .formLogin((form) -> form
+                .formLogin(form -> form
                         .loginPage("/signin")
-                        .permitAll().usernameParameter("email").defaultSuccessUrl("/", true)
+                        .loginProcessingUrl("/signin")
+                        .usernameParameter("email")
+                        .passwordParameter("password")
+                        .defaultSuccessUrl("/", true)
+                        .failureUrl("/signin?error=true")
+                        .permitAll()
                 )
-                .logout((logout) -> logout.permitAll());
+                .logout((logout) -> logout
+                        .logoutSuccessUrl("/signin")
+                );
+
         return http.build();
     }
 }

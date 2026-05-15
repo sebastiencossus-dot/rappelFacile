@@ -1,6 +1,8 @@
 package com.webapp.services;
 
 
+import com.webapp.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -10,16 +12,13 @@ import com.webapp.services.form.SignUpForm;
 @Service
 public class UserService {
 
-    private final PasswordEncoder passwordEncoder;
-    private final UserRepository userRepository;
+    @Autowired
+    RdvClient rdvClient;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
 
-    public UserService(PasswordEncoder passwordEncoder, UserRepository userRepository) {
-//        this.sessionService = sessionService;
-        this.passwordEncoder = passwordEncoder;
-        this.userRepository = userRepository;
-
-    }
 
     public User registration(SignUpForm form) {
         User user = new User();
@@ -31,7 +30,7 @@ public class UserService {
         user.setTel(form.getTel());
 
         user.setMdp(passwordEncoder.encode(form.getPassword()));
-        return userRepository.save(user);
+        return rdvClient.save(user);
 
 
     }
@@ -58,6 +57,6 @@ public class UserService {
 
         // Hash + sauvegarde
         user.setMdp(passwordEncoder.encode(newPassword));
-        userRepository.save(user);
+        rdvClient.save(user);
     }
 }

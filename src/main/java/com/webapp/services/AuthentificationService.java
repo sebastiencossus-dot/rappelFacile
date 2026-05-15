@@ -2,33 +2,41 @@ package com.webapp.services;
 
 
 
+import com.webapp.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Optional;
-
 
 
 @Service
 public class AuthentificationService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    @Autowired
+    RdvClient rdvClient;
 
-    public AuthentificationService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        Optional<User> user = userRepository
-                .findUsersByEmail(s);
-        if (user.isPresent()) {
-            return new org.springframework.security.core.userdetails.User(user.get().getEmail(), user.get().getMdp(), new ArrayList<>());
-        }
-        throw new UsernameNotFoundException(s);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
+        try {
+            User user = rdvClient.findUserByEmail(email);
+
+            if (user == null || user.getEmail() == null || user.getMdp() == null) {
+                throw new UsernameNotFoundException("Utilisateur invalide");
+            }
+
+            return new org.springframework.security.core.userdetails.User(
+                    user.getEmail(),
+                    user.getMdp(),
+                    new ArrayList<>()
+            );
+
+        } catch (Exception e) {
+            throw new UsernameNotFoundException("Erreur auth user: " + email, e);
+        }
     }
 }
