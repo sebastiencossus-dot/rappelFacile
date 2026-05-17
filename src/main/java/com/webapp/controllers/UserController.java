@@ -36,11 +36,10 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public ModelAndView home() {
-        User user = sessionService.sessionUser(); // récupère l'utilisateur
-        ModelAndView mav = new ModelAndView("index");
-        mav.addObject("currentUser", user); // passe à la vue
-        return mav;
+    public String home(RedirectAttributes redirectAttributes) {
+        User user = sessionService.sessionUser();
+        redirectAttributes.addFlashAttribute("currentUser", user);
+        return "redirect:/rdv";
     }
 
     @GetMapping("/signup")
