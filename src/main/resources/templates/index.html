@@ -33,21 +33,19 @@
                     <p class="RdvBox-card-text">
 
             <span class="RdvBox-card-text-time"
-                  th:text="${#temporals.format(rdv.dateRdv, 'dd/MM/yyyy')}">
-                10:00
+                  th:text="'Motif : ' + ${rdv.motif}">
             </span>
 
                         <br>
 
                         <span class="RdvBox-card-text-motif"
-                              th:text="${rdv.professions.nom}">
-                Motif
-            </span>
+
+                              th:text="'A :' + ${#temporals.format(rdv.dateRdv, 'HH:mm')}">
+                        </span>
                     </p>
 
                     <p class="RdvBox-card-prestataire"
-                       th:text="${rdv.prestataires.nom + ' ' + rdv.prestataires.prenom}">
-                        Prestataire
+                       th:text="${rdv.prestataires.nom} + ' ' + ${rdv.prestataires.prenom}">
                     </p>
 
                 </div>
@@ -68,18 +66,18 @@
                     <p class="RdvBox-card-text">
 
             <span class="RdvBox-card-text-time"
-                  th:text="${#temporals.format(rdv.dateRdv, 'dd/MM/yyyy')}">
+                  th:text="${#temporals.format(rdv.dateRdv, 'dd/MM/yyyy HH:mm')}">
             </span>
 
                         <br>
 
-                        <span class="RdvBox-card-text-motif"
-                              th:text="${rdv.professions.nom}">
-            </span>
+            <span class="RdvBox-card-text-time"
+                  th:text="'Motif : ' + ${rdv.motif}">
+                                               </span>
                     </p>
 
-                    <p class="RdvBox-card-prestataire">
-                        <i class="fa-regular fa-square-check"></i>
+                    <p class="RdvBox-card-prestataire">Rdv   realisé :    </p>
+                    <p><i class="fa-regular fa-square-check"></i>
                         <i class="fa-solid fa-ban"></i>
                     </p>
 
@@ -101,7 +99,7 @@
                 <p class="RdvBox-card-text">
 
             <span class="RdvBox-card-text-time"
-                  th:text="${#temporals.format(rdv.dateRdv, 'dd/MM/yyyy')}">
+                  th:text="${#temporals.format(rdv.dateRdv, 'EEEE dd MMMM yyyy', T(java.util.Locale).FRENCH)}">
             </span>
 
                     <br>
@@ -125,3 +123,5 @@
 </main>
 
 <div th:insert="~{footer :: footer}"></div>
+<script src="https://kit.fontawesome.com/0aa6008ea0.js" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>

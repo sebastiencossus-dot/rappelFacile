@@ -16,22 +16,22 @@ import java.util.ArrayList;
 public class AuthentificationService implements UserDetailsService {
 
     @Autowired
-    RdvClient rdvClient;
+    MsRdvClient msRdvClient;
 
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
         try {
-            User user = rdvClient.findUserByEmail(email);
+            User user = msRdvClient.findUserByEmail(email);
 
-            if (user == null || user.getEmail() == null || user.getMdp() == null) {
+            if (user == null || user.getEmail() == null || user.getPassword() == null) {
                 throw new UsernameNotFoundException("Utilisateur invalide");
             }
 
             return new org.springframework.security.core.userdetails.User(
                     user.getEmail(),
-                    user.getMdp(),
+                    user.getPassword(),
                     new ArrayList<>()
             );
 

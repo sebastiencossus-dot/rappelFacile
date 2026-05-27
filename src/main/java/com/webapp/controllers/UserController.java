@@ -5,7 +5,7 @@ package com.webapp.controllers;
 
 
 import com.webapp.models.User;
-import com.webapp.services.RdvClient;
+import com.webapp.services.MsRdvClient;
 import com.webapp.services.SessionService;
 import com.webapp.services.UserService;
 import com.webapp.services.form.SignUpForm;
@@ -23,7 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class UserController {
 
     @Autowired
-    RdvClient rdvClient;
+    private MsRdvClient msRdvClient;
 
     private final UserService userService;
     private final SessionService sessionService;
@@ -39,6 +39,7 @@ public class UserController {
     public String home(RedirectAttributes redirectAttributes) {
         User user = sessionService.sessionUser();
         redirectAttributes.addFlashAttribute("currentUser", user);
+        String email = user.getEmail();
         return "redirect:/rdv";
     }
 
@@ -48,9 +49,18 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public ModelAndView processRequest(SignUpForm form) {
+    public String signup(SignUpForm form) {
+
+        User user = new User();
+        user.setNom(form.getNom());
+        user.setPrenom(form.getPrenom());
+        user.setEmail(form.getEmail());
+        user.setTel(form.getTel());
+        user.setPassword(form.getPassword());
+
         userService.registration(form);
-        return new ModelAndView("signin");
+
+        return "redirect:/login";
     }
 
 

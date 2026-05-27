@@ -227,6 +227,9 @@ body {
     justify-items: start;
     gap: 20px;
   }
+  .ContentBox-rdvBox p{
+    padding-left: 10px;
+  }
   .ContentBox-rdvBox.jour {
     grid-column: 1/2;
     grid-row: 1/2;
@@ -244,6 +247,14 @@ body {
     padding: 50px 0 0 50px;
     width: 80%;
   }
+}
+
+.ContentBox2-detailRdv-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
 }
 
 .RdvBox {

@@ -1,7 +1,7 @@
 <body>
 <div class="Container">
     <header class="HeaderBox">
-        <img class="HeaderBox-logo" src="images/logo.png" alt="Logo Rappel Facile">
+        <img class="HeaderBox-logo" th:src="@{/images/logo.png}" alt="Logo Rappel Facile">
         <h1 class="HeaderBox-title">Rappel Facile</h1>
         <div class="NavBox">
             <i class="fa-solid fa-bars NavBox-burger"></i>
@@ -15,9 +15,10 @@
                 </nav>
                 <div class="NavBox-user">
                     <img class="NavBox-user-avatar"
-                         th:src="@{'/images/' + ${currentUser.photo}}"
-                         alt="Avatar utilisateur">
-                    <p th:text="${currentUser.prenom}">Prenom</p>
+                         th:if="${currentUser != null}"
+                         th:src="@{'/images/' + ${currentUser.photo}}">
+
+                    <p th:text="${currentUser != null ? currentUser.prenom : 'Invité'}"></p>
                     <form th:action="@{/logout}" method="post" class="NavBox-user-logout">
                         <button type="submit" class="NavBox-user-logoutBtn">
                             log out

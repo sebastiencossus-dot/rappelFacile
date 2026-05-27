@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class SessionService {
 
     @Autowired
-    RdvClient rdvClient;
+    MsRdvClient msRdvClient;
 
 
 
@@ -20,9 +20,13 @@ public class SessionService {
 
     public User sessionUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth == null || !auth.isAuthenticated() || auth.getName().equals("anonymousUser")) {
-            throw new RuntimeException("Utilisateur non connecté");
+
+        if (auth == null ||
+                !auth.isAuthenticated() ||
+                "anonymousUser".equals(auth.getName())) {
+            throw new RuntimeException("NO_SESSION");
         }
-        return rdvClient.findUserByEmail(auth.getName());
+
+        return msRdvClient.findUserByEmail(auth.getName());
     }
 }

@@ -14,7 +14,7 @@ public class User {
     private int idUser;
 
     private String email;
-    private String mdp;
+    private String password;
     private String nom;
     private String prenom;
     private String tel;
@@ -36,12 +36,12 @@ public class User {
         this.email = email;
     }
 
-    public String getMdp() {
-        return mdp;
+    public String getPassword() {
+        return password;
     }
 
-    public void setMdp(String mdp) {
-        this.mdp = mdp;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getNom() {

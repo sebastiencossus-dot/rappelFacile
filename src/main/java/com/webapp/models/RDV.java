@@ -5,6 +5,7 @@ package com.webapp.models;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,8 +16,9 @@ public class RDV {
 
 
     private Integer id;
-    private LocalDate dateRdv;
+    private LocalDateTime dateRdv;
     private Integer isOK;
+    private String motif;
 
     private Prestataires prestataires;
     private Professions professions;

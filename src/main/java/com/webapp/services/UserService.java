@@ -13,7 +13,7 @@ import com.webapp.services.form.SignUpForm;
 public class UserService {
 
     @Autowired
-    RdvClient rdvClient;
+    MsRdvClient msRdvClient;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -21,16 +21,20 @@ public class UserService {
 
 
     public User registration(SignUpForm form) {
-        User user = new User();
 
+
+
+        User user = new User();
 
         user.setPrenom(form.getPrenom());
         user.setNom(form.getNom());
         user.setEmail(form.getEmail());
         user.setTel(form.getTel());
 
-        user.setMdp(passwordEncoder.encode(form.getPassword()));
-        return rdvClient.save(user);
+
+
+        user.setPassword(passwordEncoder.encode(form.getPassword()));
+        return msRdvClient.createUser(user);
 
 
     }
@@ -41,7 +45,7 @@ public class UserService {
                                String confirmPassword) {
 
         // Vérifier ancien mot de passe
-        if (!passwordEncoder.matches(oldPassword, user.getMdp())) {
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
             throw new RuntimeException("Ancien mot de passe incorrect");
         }
 
@@ -56,7 +60,7 @@ public class UserService {
         }
 
         // Hash + sauvegarde
-        user.setMdp(passwordEncoder.encode(newPassword));
-        rdvClient.save(user);
+        user.setPassword(passwordEncoder.encode(newPassword));
+        msRdvClient.createUser(user);
     }
 }

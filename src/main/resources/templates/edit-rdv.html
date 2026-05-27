@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/style.css" rel="stylesheet">
+    <title>RDV Form</title>
+</head>
+
+<body>
+
+<div th:insert="~{header :: header}"></div>
+
+<main class="ContentBox">
+
+    <h2 class="ContentBox-title"
+        th:text="${rdv != null} ? 'Modifier le rendez-vous' : 'Créer un rendez-vous'">
+    </h2>
+
+    <section class="ContentBox2-detailRdv">
+
+        <!-- PRESTATAIRE (si edit) -->
+        <div class="ContentBox2-detailRdv-prestataire"
+             th:if="${rdv != null}">
+
+            <p>
+                <span th:text="${rdv.prestataires.nom}"></span>
+                <span class="ContentBox2-detailRdv-prestataire-spe"
+                      th:text="${rdv.prestataires.profession}">
+                </span>
+            </p>
+
+            <img src="/images/calendar-add.png" alt="rdv">
+        </div>
+
+        <!-- FORM -->
+        <form th:action="${rdv != null} ? @{'/rdv/update/' + ${rdv.id}} : @{/rdv/add}"
+              method="post"
+              class="ContentBox2-detailRdv">
+
+            <!-- DATE -->
+            <div class="ContentBox2-detailRdv-card fond1">
+                <p class="ContentBox2-detailRdv-card-left">
+                    <i class="fa-regular fa-calendar"></i> Date
+                </p>
+
+                <input type="datetime-local"
+                       name="dateRdv"
+                       class="ContentBox2-detailRdv-input"
+                       th:value="${rdv != null} ? ${#temporals.format(rdv.dateRdv, 'yyyy-MM-dd''T''HH:mm')} : ''"/>
+            </div>
+
+            <!-- MOTIF -->
+            <div class="ContentBox2-detailRdv-card fond2">
+                <p class="ContentBox2-detailRdv-card-left">
+                    <i class="fa-solid fa-book"></i> Motif
+                </p>
+
+                <input type="text"
+                       name="motif"
+                       class="ContentBox2-detailRdv-input"
+                       th:value="${rdv != null} ? ${rdv.motif} : ''"/>
+            </div>
+            <label>Prestataire</label>
+            <select th:field="*{prestataires}" id="prestataireSelect">
+                <option value="">-- Choisir --</option>
+                <option th:each="p : ${prestataires}"
+                        th:value="${p.id}"
+                        th:text="${p.nom + ' ' + p.prenom}">
+                </option>
+            </select>
+
+            <!-- PROFESSION -->
+            <label>Profession</label>
+            <select th:field="*{professions}">
+                <option value="">-- Choisir --</option>
+                <option th:each="pr : ${professions}"
+                        th:value="${pr}"
+                        th:text="${pr.nom}">
+                </option>
+            </select>
+
+            <!-- ADRESSE -->
+            <label>Adresse</label>
+            <select th:field="*{adresses}">
+                <option value="">-- Choisir --</option>
+                <option th:each="a : ${prestataires[0].categories != null ? prestataires[0].categories : {}}"
+                        th:value="${a}"
+                        th:text="${a.rue + ' ' + a.ville}">
+                </option>
+            </select>
+            <!-- BOUTON -->
+            <div style="width: 100%; display:flex; justify-content:center; margin-top:20px;">
+
+                <button type="submit"
+                        class="ContentBox2-detailRdv-btn btn2"
+                        th:text="${rdv != null} ? 'Modifier le RDV' : 'Créer le RDV'">
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<div th:insert="~{footer :: footer}"></div>
+
+
+
+</body>
+</html>
