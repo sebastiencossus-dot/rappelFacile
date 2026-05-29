@@ -1,10 +1,13 @@
 package com.webapp.services;
 
+import com.webapp.models.Adresses;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "msRdv")
+import java.util.List;
+
+@FeignClient(name = "msRdv", contextId = "adresseClient")
 public interface AdresseClient {
 
     @GetMapping("/adresses")

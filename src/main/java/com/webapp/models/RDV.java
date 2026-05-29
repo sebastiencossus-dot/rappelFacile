@@ -22,6 +22,8 @@ public class RDV {
 
     private Prestataires prestataires;
     private Professions professions;
+    private Adresses adresses;
+    private User user;
 
 
 }

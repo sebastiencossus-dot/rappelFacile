@@ -3,7 +3,6 @@ package com.webapp.controllers;
 import com.webapp.models.RDV;
 import com.webapp.models.User;
 import com.webapp.services.*;
-import com.webapp.services.form.RdvForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +29,17 @@ public class RdvController {
 
     @Autowired
     MsRdvClient msRdvClient;
+
+    @Autowired
+    ProfessionService professionService;
+
+    @Autowired
+    PrestataireService prestataireService;
+
+    @Autowired
+    AdresseService adresseService;
+
+
 
     @GetMapping("/rdv")
     public ModelAndView index() {
@@ -83,6 +93,7 @@ public class RdvController {
 
         mav.addObject("prestataires", prestataireService.findAll());
         mav.addObject("professions", professionService.findAll());
+        mav.addObject("adresse", adresseService.findAll());
 
         return mav;
     }
