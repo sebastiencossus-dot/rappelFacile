@@ -5,7 +5,7 @@ package com.webapp.controllers;
 
 
 import com.webapp.models.User;
-import com.webapp.services.MsRdvClient;
+import com.webapp.services.MsJpaClient;
 import com.webapp.services.SessionService;
 import com.webapp.services.UserService;
 import com.webapp.services.form.SignUpForm;
@@ -23,7 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class UserController {
 
     @Autowired
-    private MsRdvClient msRdvClient;
+    private MsJpaClient msJpaClient;
 
     private final UserService userService;
     private final SessionService sessionService;

@@ -16,14 +16,14 @@ import java.util.ArrayList;
 public class AuthentificationService implements UserDetailsService {
 
     @Autowired
-    MsRdvClient msRdvClient;
+    MsJpaClient msJpaClient;
 
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
         try {
-            User user = msRdvClient.findUserByEmail(email);
+            User user = msJpaClient.findUserByEmail(email);
 
             if (user == null || user.getEmail() == null || user.getPassword() == null) {
                 throw new UsernameNotFoundException("Utilisateur invalide");

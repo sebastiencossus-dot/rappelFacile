@@ -12,31 +12,31 @@ import java.util.List;
 public class RdvService {
 
     @Autowired
-    MsRdvClient msRdvClient;
+    MsJpaClient msJpaClient;
 
     @Autowired
     SessionService sessionService;
 
-    public RdvService(MsRdvClient msRdvClient) {
-        this.msRdvClient = msRdvClient;
+    public RdvService(MsJpaClient msJpaClient) {
+        this.msJpaClient = msJpaClient;
     }
 
     public List<RDV> getRdvByUser(@RequestBody String email) {
-        return msRdvClient.getRdvByUser(email);
+        return msJpaClient.getRdvByUser(email);
     }
 
     public RDV createRdv(RDV rdv) {
         rdv.setIsOK(1);
-        return msRdvClient.createRdv(rdv);
+        return msJpaClient.createRdv(rdv);
     }
 
     public RDV updateRdv(Integer id, RDV rdv) {
         User user = sessionService.sessionUser();
-        return msRdvClient.updateRdv(id, rdv, user.getEmail());
+        return msJpaClient.updateRdv(id, rdv, user.getEmail());
     }
 
     public void deleteRdv(Integer id) {
         User user = sessionService.sessionUser();
-        msRdvClient.deleteRdv(id, user.getEmail());
+        msJpaClient.deleteRdv(id, user.getEmail());
     }
 }

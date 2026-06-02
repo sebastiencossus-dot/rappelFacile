@@ -21,4 +21,7 @@ public class PrestataireService {
     public Prestataires findById(Integer id) {
         return client.findById(id);
     }
+
+    public Object getAll() { return client.findAll(); }
+
 }

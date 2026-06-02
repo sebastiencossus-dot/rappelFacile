@@ -15,7 +15,9 @@ public class Prestataires {
     private Integer id;
     private String nom;
     private String prenom;
-    private Integer isValide;
+    private Boolean isValide;
+
+
 
 
 

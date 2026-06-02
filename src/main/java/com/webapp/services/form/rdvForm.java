@@ -2,7 +2,7 @@ package com.webapp.services.form;
 
 import java.time.LocalDateTime;
 
-public class RdvForm {
+public class rdvForm {
 
     private Integer id;
     private LocalDateTime dateRdv;

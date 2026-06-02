@@ -33,70 +33,123 @@
         </div>
 
         <!-- FORM -->
-        <form th:action="${rdv != null} ? @{'/rdv/update/' + ${rdv.id}} : @{/rdv/add}"
+        <form th:object="${rdvForm}"
+              th:action="${rdv != null} ? @{'/rdv/update/' + ${rdv.id}} : @{/rdv/add}"
               method="post"
               class="ContentBox2-detailRdv">
 
-            <!-- DATE -->
-            <div class="ContentBox2-detailRdv-card fond1">
-                <p class="ContentBox2-detailRdv-card-left">
-                    <i class="fa-regular fa-calendar"></i> Date
-                </p>
+            <form th:object="${rdvForm}"
+                  th:action="${rdv != null} ? @{'/rdv/update/' + ${rdv.id}} : @{/rdv/add}"
+                  method="post"
+                  class="ContentBox2-detailRdv">
 
-                <input type="datetime-local"
-                       name="dateRdv"
-                       class="ContentBox2-detailRdv-input"
-                       th:value="${rdv != null} ? ${#temporals.format(rdv.dateRdv, 'yyyy-MM-dd''T''HH:mm')} : ''"/>
-            </div>
+                ```
+                <!-- DATE -->
+                <div class="ContentBox2-detailRdv-card fond1">
+                    <p class="ContentBox2-detailRdv-card-left">
+                        <i class="fa-regular fa-calendar"></i> Date du rendez-vous
+                    </p>
 
-            <!-- MOTIF -->
-            <div class="ContentBox2-detailRdv-card fond2">
-                <p class="ContentBox2-detailRdv-card-left">
-                    <i class="fa-solid fa-book"></i> Motif
-                </p>
+                    <input type="datetime-local"
+                           th:field="*{dateRdv}"
+                           class="ContentBox2-detailRdv-input"/>
+                </div>
 
-                <input type="text"
-                       name="motif"
-                       class="ContentBox2-detailRdv-input"
-                       th:value="${rdv != null} ? ${rdv.motif} : ''"/>
-            </div>
-            <label>Prestataire</label>
-            <select th:field="*{prestataires}" id="prestataireSelect">
-                <option value="">-- Choisir --</option>
-                <option th:each="p : ${prestataires}"
-                        th:value="${p.id}"
-                        th:text="${p.nom + ' ' + p.prenom}">
-                </option>
-            </select>
+                <!-- MOTIF -->
+                <div class="ContentBox2-detailRdv-card fond2">
+                    <p class="ContentBox2-detailRdv-card-left">
+                        <i class="fa-solid fa-book"></i> Motif
+                    </p>
 
-            <!-- PROFESSION -->
-            <label>Profession</label>
-            <select th:field="*{professions}">
-                <option value="">-- Choisir --</option>
-                <option th:each="pr : ${professions}"
-                        th:value="${pr}"
-                        th:text="${pr.nom}">
-                </option>
-            </select>
+                    <input type="text"
+                           th:field="*{motif}"
+                           class="ContentBox2-detailRdv-input"
+                           placeholder="Ex : Consultation annuelle"/>
+                </div>
 
-            <!-- ADRESSE -->
-            <label>Adresse</label>
-            <select th:field="*{adresses}">
-                <option value="">-- Choisir --</option>
-                <option th:each="a : ${prestataires[0].categories != null ? prestataires[0].categories : {}}"
-                        th:value="${a}"
-                        th:text="${a.rue + ' ' + a.ville}">
-                </option>
-            </select>
-            <!-- BOUTON -->
-            <div style="width: 100%; display:flex; justify-content:center; margin-top:20px;">
+                <!-- CATEGORIE -->
+                <div class="ContentBox2-detailRdv-card fond3">
+                    <p class="ContentBox2-detailRdv-card-left">
+                        <i class="fa-solid fa-calendar-days"></i> Catégorie
+                    </p>
 
-                <button type="submit"
-                        class="ContentBox2-detailRdv-btn btn2"
-                        th:text="${rdv != null} ? 'Modifier le RDV' : 'Créer le RDV'">
-                </button>
+                    <select th:field="*{categorieId}"
+                            class="ContentBox2-detailRdv-input">
+                        <option value="">-- Choisir --</option>
+                        <option th:each="c : ${categories}"
+                                th:value="${c.id}"
+                                th:text="${c.nom}">
+                        </option>
+                    </select>
+                </div>
 
-            </div>
+                <!-- PRESTATAIRE -->
+                <div class="ContentBox2-detailRdv-card fond2">
+                    <p class="ContentBox2-detailRdv-card-left">
+                        <i class="fa-regular fa-user"></i> Prestataire
+                    </p>
+
+                    <select th:field="*{prestataireId}"
+                            class="ContentBox2-detailRdv-input">
+                        <option value="">-- Choisir --</option>
+                        <option th:each="p : ${prestataires}"
+                                th:value="${p.id}"
+                                th:text="${p.nom + ' ' + p.prenom}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- PROFESSION -->
+                <div class="ContentBox2-detailRdv-card fond1">
+                    <p class="ContentBox2-detailRdv-card-left">
+                        <i class="fa-solid fa-briefcase"></i> Profession
+                    </p>
+
+                    <select th:field="*{professionId}"
+                            class="ContentBox2-detailRdv-input">
+                        <option value="">-- Choisir --</option>
+                        <option th:each="pr : ${professions}"
+                                th:value="${pr.id}"
+                                th:text="${pr.nom}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- ADRESSE -->
+                <div class="ContentBox2-detailRdv-card fond1">
+                    <p class="ContentBox2-detailRdv-card-left">
+                        <i class="fa-solid fa-location-dot"></i> Adresse
+                    </p>
+
+                    <select th:field="*{adresseId}"
+                            class="ContentBox2-detailRdv-input">
+                        <option value="">-- Choisir --</option>
+                        <option th:each="a : ${adresses}"
+                                th:value="${a.id}"
+                                th:text="${a.rue + ' ' + a.ville}">
+                        </option>
+                    </select>
+                </div>
+
+                <!-- INFO -->
+                <div class="ContentBox2-detailRdv-card fond3">
+                    <p class="ContentBox2-detailRdv-card-right">
+                        Une alerte sera envoyée 24h avant le rendez-vous.<br>
+                        Vous pourrez ajouter d'autres rappels après création.
+                    </p>
+                </div>
+
+                <!-- BOUTON -->
+                <div class="ContentBox2-detailRdv-submit">
+                    <button type="submit"
+                            class="ContentBox2-detailRdv-btn btn2"
+                            th:text="${rdv != null} ? 'Modifier le RDV' : 'Créer le RDV'">
+                    </button>
+                </div>
+
+
+            </form>
+
 
         </form>
 

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class SessionService {
 
     @Autowired
-    MsRdvClient msRdvClient;
+    MsJpaClient msJpaClient;
 
 
 
@@ -27,6 +27,6 @@ public class SessionService {
             throw new RuntimeException("NO_SESSION");
         }
 
-        return msRdvClient.findUserByEmail(auth.getName());
+        return msJpaClient.findUserByEmail(auth.getName());
     }
 }

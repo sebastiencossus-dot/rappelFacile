@@ -13,7 +13,7 @@ import com.webapp.services.form.SignUpForm;
 public class UserService {
 
     @Autowired
-    MsRdvClient msRdvClient;
+    MsJpaClient msJpaClient;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -34,7 +34,7 @@ public class UserService {
 
 
         user.setPassword(passwordEncoder.encode(form.getPassword()));
-        return msRdvClient.createUser(user);
+        return msJpaClient.createUser(user);
 
 
     }
@@ -61,6 +61,6 @@ public class UserService {
 
         // Hash + sauvegarde
         user.setPassword(passwordEncoder.encode(newPassword));
-        msRdvClient.createUser(user);
+        msJpaClient.createUser(user);
     }
 }

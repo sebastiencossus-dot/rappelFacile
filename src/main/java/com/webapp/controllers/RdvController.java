@@ -3,8 +3,10 @@ package com.webapp.controllers;
 import com.webapp.models.RDV;
 import com.webapp.models.User;
 import com.webapp.services.*;
+import com.webapp.services.form.rdvForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +30,7 @@ public class RdvController {
     SessionService sessionService;
 
     @Autowired
-    MsRdvClient msRdvClient;
+    MsJpaClient msJpaClient;
 
     @Autowired
     ProfessionService professionService;
@@ -85,17 +87,15 @@ public class RdvController {
     }
 
     @GetMapping("/rdv/add")
-    public ModelAndView addRdvForm() {
+    public String createForm(Model model) {
 
-        ModelAndView mav = new ModelAndView("rdv-form");
+        model.addAttribute("rdvForm", new rdvForm());
 
-        mav.addObject("rdv", new RDV());
+        model.addAttribute("prestataires", prestataireService.findAll());
+        model.addAttribute("professions", professionService.findAll());
+        model.addAttribute("adresses", adresseService.findAll());
 
-        mav.addObject("prestataires", prestataireService.findAll());
-        mav.addObject("professions", professionService.findAll());
-        mav.addObject("adresse", adresseService.findAll());
-
-        return mav;
+        return "edit-rdv";
     }
 
     @PostMapping("/rdv/add")
@@ -117,6 +117,35 @@ public class RdvController {
         return "redirect:/rdv";
     }
 
+    @GetMapping("/rdv/edit/{email}")
+    public String editForm(@PathVariable String email, Model model) {
+
+
+        RDV rdv = (RDV) rdvService.getRdvByUser(email);
+
+
+        rdvForm form = new rdvForm();
+        form.setId(rdv.getId());
+        form.setMotif(rdv.getMotif());
+        form.setDateRdv(rdv.getDateRdv());
+        form.setPrestataireId(rdv.getPrestataires().getId());
+        form.setAdresseId(rdv.getAdresses().getId());
+        form.setProfessionId(rdv.getProfessions().getId());
+
+        // 🔥 injection dans la vue
+        model.addAttribute("rdvForm", form);
+
+        // 🔥 listes
+        model.addAttribute("prestataires", prestataireService.findAll());
+        model.addAttribute("professions", professionService.findAll());
+        model.addAttribute("adresses", adresseService.findAll());
+
+        // si tu veux afficher les infos en haut
+        model.addAttribute("rdv", rdv);
+
+        return "edit-rdv";
+    }
+
     @PostMapping("/rdv/update/{id}")
     public String updateRdv(@PathVariable Integer id, RDV rdv) {
         rdvService.updateRdv(id, rdv);
@@ -134,7 +163,7 @@ public class RdvController {
 
         String email = sessionService.sessionUser().getEmail();
 
-        RDV rdv = msRdvClient.getRdv(id, email);
+        RDV rdv = msJpaClient.getRdv(id, email);
 
         if (rdv == null) {
             return new ModelAndView("redirect:/rdv");

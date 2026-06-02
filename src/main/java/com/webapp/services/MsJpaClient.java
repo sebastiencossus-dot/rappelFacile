@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "msRdv")
-public interface MsRdvClient {
+@FeignClient(name = "msjpa")
+public interface MsJpaClient {
 
     // USERS
     @GetMapping("/users")

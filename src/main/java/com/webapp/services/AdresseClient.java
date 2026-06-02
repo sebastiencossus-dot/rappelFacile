@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "msRdv", contextId = "adresseClient")
+@FeignClient(name = "msjpa", contextId = "adresseClient")
 public interface AdresseClient {
 
     @GetMapping("/adresses")
