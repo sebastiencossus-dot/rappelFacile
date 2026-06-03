@@ -477,7 +477,7 @@ body {
 }
 .ContentBox2-detailRdv-btn:hover {
   background-color: grey;
-  color: white;
+  color: black;
 }
 .ContentBox2-detailRdv-btn.btn2 {
   background-color: black;
@@ -486,6 +486,7 @@ body {
 }
 .ContentBox2-detailRdv-btn.btn2:hover {
   background-color: grey;
+  color: white;
 }
 .ContentBox2-detailRdv-input {
   width: 95%;

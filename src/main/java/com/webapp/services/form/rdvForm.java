@@ -11,6 +11,7 @@ public class rdvForm {
     private Integer adresseId;
     private Integer professionId;
 
+
     public Integer getId() {
         return id;
     }
@@ -58,4 +59,6 @@ public class rdvForm {
     public void setProfessionId(Integer professionId) {
         this.professionId = professionId;
     }
+
+
 }

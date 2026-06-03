@@ -32,7 +32,7 @@
             <img src="/images/calendar-add.png" alt="rdv">
         </div>
 
-        <!-- FORM -->
+
         <form th:object="${rdvForm}"
               th:action="${rdv != null} ? @{'/rdv/update/' + ${rdv.id}} : @{/rdv/add}"
               method="post"
@@ -43,8 +43,8 @@
                   method="post"
                   class="ContentBox2-detailRdv">
 
-                ```
-                <!-- DATE -->
+
+
                 <div class="ContentBox2-detailRdv-card fond1">
                     <p class="ContentBox2-detailRdv-card-left">
                         <i class="fa-regular fa-calendar"></i> Date du rendez-vous
@@ -55,7 +55,7 @@
                            class="ContentBox2-detailRdv-input"/>
                 </div>
 
-                <!-- MOTIF -->
+
                 <div class="ContentBox2-detailRdv-card fond2">
                     <p class="ContentBox2-detailRdv-card-left">
                         <i class="fa-solid fa-book"></i> Motif
@@ -67,23 +67,10 @@
                            placeholder="Ex : Consultation annuelle"/>
                 </div>
 
-                <!-- CATEGORIE -->
-                <div class="ContentBox2-detailRdv-card fond3">
-                    <p class="ContentBox2-detailRdv-card-left">
-                        <i class="fa-solid fa-calendar-days"></i> Catégorie
-                    </p>
 
-                    <select th:field="*{categorieId}"
-                            class="ContentBox2-detailRdv-input">
-                        <option value="">-- Choisir --</option>
-                        <option th:each="c : ${categories}"
-                                th:value="${c.id}"
-                                th:text="${c.nom}">
-                        </option>
-                    </select>
-                </div>
 
-                <!-- PRESTATAIRE -->
+
+
                 <div class="ContentBox2-detailRdv-card fond2">
                     <p class="ContentBox2-detailRdv-card-left">
                         <i class="fa-regular fa-user"></i> Prestataire
@@ -99,7 +86,7 @@
                     </select>
                 </div>
 
-                <!-- PROFESSION -->
+
                 <div class="ContentBox2-detailRdv-card fond1">
                     <p class="ContentBox2-detailRdv-card-left">
                         <i class="fa-solid fa-briefcase"></i> Profession
@@ -115,7 +102,7 @@
                     </select>
                 </div>
 
-                <!-- ADRESSE -->
+
                 <div class="ContentBox2-detailRdv-card fond1">
                     <p class="ContentBox2-detailRdv-card-left">
                         <i class="fa-solid fa-location-dot"></i> Adresse
@@ -131,7 +118,7 @@
                     </select>
                 </div>
 
-                <!-- INFO -->
+
                 <div class="ContentBox2-detailRdv-card fond3">
                     <p class="ContentBox2-detailRdv-card-right">
                         Une alerte sera envoyée 24h avant le rendez-vous.<br>
@@ -139,7 +126,7 @@
                     </p>
                 </div>
 
-                <!-- BOUTON -->
+
                 <div class="ContentBox2-detailRdv-submit">
                     <button type="submit"
                             class="ContentBox2-detailRdv-btn btn2"
