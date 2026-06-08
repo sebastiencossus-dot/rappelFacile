@@ -4,6 +4,7 @@ import com.webapp.models.AdresseDTO;
 import com.webapp.models.PrestataireDTO;
 import com.webapp.models.Prestataires;
 import com.webapp.models.Professions;
+import com.webapp.services.AdresseClient;
 import com.webapp.services.PrestataireClient;
 import com.webapp.services.ProfessionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,13 @@ public class PrestataireController {
 
     @Autowired
     private ProfessionService professionService;
+    @Autowired
+    private AdresseClient adresseClient;
 
     @GetMapping("/add")
     public String showForm(Model model) {
         model.addAttribute("professions", professionService.findAll());
+        model.addAttribute("adresses", adresseClient.findAll());
         return "prestataire-add";
     }
 
@@ -38,10 +42,11 @@ public class PrestataireController {
             @RequestParam String nom,
             @RequestParam String prenom,
             @RequestParam(required = false) List<Integer> professionIds,
-            @RequestParam List<String> rues,
-            @RequestParam List<String> numeros,
-            @RequestParam List<String> villes,
-            @RequestParam List<String> codePostals) {
+            @RequestParam(required = false) Integer adresseExistanteId,
+            @RequestParam(required = false) String rue,
+            @RequestParam(required = false) String numero,
+            @RequestParam(required = false) String ville,
+            @RequestParam(required = false) String codePostal) {
 
         PrestataireDTO dto = new PrestataireDTO();
         dto.setNom(nom);
@@ -49,18 +54,22 @@ public class PrestataireController {
         dto.setProfessionIds(professionIds);
 
         List<AdresseDTO> adresses = new ArrayList<>();
-        for (int i = 0; i < rues.size(); i++) {
+
+        if (adresseExistanteId != null) {
             AdresseDTO a = new AdresseDTO();
-            a.setRue(rues.get(i));
-            a.setNumero(numeros.get(i));
-            a.setVille(villes.get(i));
-            a.setCodepostal(codePostals.get(i));
+            a.setId(adresseExistanteId);
+            adresses.add(a);
+        } else if (rue != null && !rue.isBlank()) {
+            AdresseDTO a = new AdresseDTO();
+            a.setRue(rue);
+            a.setNumero(numero);
+            a.setVille(ville);
+            a.setCodepostal(codePostal);
             adresses.add(a);
         }
+
         dto.setAdresses(adresses);
-
         prestataireClient.create(dto);
-
         return "redirect:/rdv";
     }
 

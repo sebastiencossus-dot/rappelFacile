@@ -1,5 +1,6 @@
 package com.webapp.services;
 
+import com.webapp.models.AdresseDTO;
 import com.webapp.models.Adresses;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,7 @@ import java.util.List;
 public interface AdresseClient {
 
     @GetMapping("/adresses")
-    List<Adresses> findAll();
+    List<AdresseDTO> findAll();
 
     @GetMapping("/adresses/{id}")
     Adresses findById(@PathVariable Integer id);

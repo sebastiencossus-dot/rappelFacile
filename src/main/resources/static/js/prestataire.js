@@ -31,3 +31,14 @@ function addAdresse() {
 
     container.appendChild(div);
 }
+
+function toggleNouvelleAdresse() {
+    const select = document.getElementById('adresse-select');
+    const div = document.getElementById('nouvelle-adresse');
+    div.style.display = select.value === '' ? 'block' : 'none';
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    toggleNouvelleAdresse();
+});

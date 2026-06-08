@@ -1,5 +1,6 @@
 package com.webapp.services;
 
+import com.webapp.models.AdresseDTO;
 import com.webapp.models.Adresses;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class AdresseService {
         this.client = client;
     }
 
-    public List<Adresses> findAll() {
+    public List<AdresseDTO> findAll() {
         return client.findAll();
     }
 
