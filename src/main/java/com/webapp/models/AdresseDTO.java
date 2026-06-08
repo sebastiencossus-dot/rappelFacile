@@ -14,5 +14,5 @@ public class AdresseDTO {
     private String rue;
     private String numero;
     private String ville;
-    private String codePostal;
+    private String codepostal;
 }

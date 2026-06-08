@@ -1,6 +1,7 @@
 package com.webapp.services;
 
 import com.webapp.models.RDV;
+import com.webapp.models.RdvPrestDTO;
 import com.webapp.models.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public interface MsJpaClient {
                @RequestParam("email") String email);
 
     @PostMapping("/rdvs")
-    RDV createRdv(@RequestBody RDV rdv);
+    RDV createRdv(@RequestBody RdvPrestDTO rdv);
 
     @PutMapping("/rdvs/{id}")
     RDV updateRdv(@PathVariable("id") Integer id,

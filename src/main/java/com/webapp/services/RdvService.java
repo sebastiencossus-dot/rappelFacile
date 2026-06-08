@@ -1,7 +1,10 @@
 package com.webapp.services;
 
+import com.webapp.models.Prestataires;
+import com.webapp.models.RdvPrestDTO;
 import com.webapp.models.User;
 import com.webapp.models.RDV;
+import com.webapp.services.form.rdvForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +20,15 @@ public class RdvService {
     @Autowired
     SessionService sessionService;
 
+    @Autowired
+    PrestataireService prestataireService;
+
+    @Autowired
+    ProfessionService professionService;
+
+    @Autowired
+    AdresseService adresseService;
+
     public RdvService(MsJpaClient msJpaClient) {
         this.msJpaClient = msJpaClient;
     }
@@ -25,9 +37,18 @@ public class RdvService {
         return msJpaClient.getRdvByUser(email);
     }
 
-    public RDV createRdv(RDV rdv) {
-        rdv.setIsOK(1);
-        return msJpaClient.createRdv(rdv);
+    public RDV createRdv(rdvForm form) {
+        RdvPrestDTO dto = new RdvPrestDTO();
+        dto.setDateRdv(form.getDateRdv());
+        dto.setMotif(form.getMotif());
+        dto.setPrestataireId(form.getPrestataireId());
+        dto.setAdresseId(form.getAdresseId());
+        dto.setProfessionId(form.getProfessionId());
+
+        User user = sessionService.sessionUser();
+        dto.setUserId(user.getIdUser());  // ← idUser de webapp
+
+        return msJpaClient.createRdv(dto);
     }
 
     public RDV updateRdv(Integer id, RDV rdv) {

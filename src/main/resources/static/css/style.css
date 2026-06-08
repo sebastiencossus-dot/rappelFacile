@@ -252,7 +252,15 @@ body {
 .ContentBox2-detailRdv-input {
     width: 100%;
     border: none;
-    background: transparent;
+    margin: 10px 10px 0 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.ContentBox2-detailRdv-select {
+    width: 100%;
+    border: none;
+    margin: 10px 10px 0 10px;
     font-size: 14px;
     outline: none;
 }

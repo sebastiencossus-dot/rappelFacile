@@ -4,6 +4,8 @@ import com.webapp.models.AdresseDTO;
 import com.webapp.models.PrestataireDTO;
 import com.webapp.models.Prestataires;
 import com.webapp.models.Professions;
+import com.webapp.services.PrestataireClient;
+import com.webapp.services.ProfessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,18 +22,14 @@ import java.util.Map;
 public class PrestataireController {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private PrestataireClient prestataireClient;
+
+    @Autowired
+    private ProfessionService professionService;
 
     @GetMapping("/add")
     public String showForm(Model model) {
-
-        Professions[] professions = restTemplate.getForObject(
-                "http://localhost:8091/professions",
-                Professions[].class
-        );
-
-        model.addAttribute("professions", professions);
-
+        model.addAttribute("professions", professionService.findAll());
         return "prestataire-add";
     }
 
@@ -43,55 +41,37 @@ public class PrestataireController {
             @RequestParam List<String> rues,
             @RequestParam List<String> numeros,
             @RequestParam List<String> villes,
-            @RequestParam List<String> codePostals
-    ) {
+            @RequestParam List<String> codePostals) {
+
         PrestataireDTO dto = new PrestataireDTO();
         dto.setNom(nom);
         dto.setPrenom(prenom);
         dto.setProfessionIds(professionIds);
 
         List<AdresseDTO> adresses = new ArrayList<>();
-
         for (int i = 0; i < rues.size(); i++) {
             AdresseDTO a = new AdresseDTO();
             a.setRue(rues.get(i));
             a.setNumero(numeros.get(i));
             a.setVille(villes.get(i));
-            a.setCodePostal(codePostals.get(i));
+            a.setCodepostal(codePostals.get(i));
             adresses.add(a);
         }
-
         dto.setAdresses(adresses);
 
-        restTemplate.postForObject(
-                "http://localhost:8091/prestataires",
-                dto,
-                Void.class
-        );
+        prestataireClient.create(dto);
 
-        return "redirect:/prestataires";
+        return "redirect:/rdv";
     }
 
-    @GetMapping("/prestataires/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String editForm(@PathVariable Integer id, Model model) {
-
-        Prestataires prestataire = restTemplate.getForObject(
-                "http://localhost:8091/prestataires" + id,
-                Prestataires.class
-        );
-
-        Professions[] professions = restTemplate.getForObject(
-                "http://localhost:8091/professions",
-                Professions[].class
-        );
-
-        model.addAttribute("prestataire", prestataire);
-        model.addAttribute("professions", professions);
-
+        model.addAttribute("prestataire", prestataireClient.findById(id));
+        model.addAttribute("professions", professionService.findAll());
         return "prestataire-edit";
     }
 
-    @PostMapping("/prestataires/edit/{id}")
+    @PostMapping("/edit/{id}")
     public String update(
             @PathVariable Integer id,
             @RequestParam String nom,
@@ -100,35 +80,29 @@ public class PrestataireController {
             @RequestParam(required = false) List<String> rues,
             @RequestParam(required = false) List<String> numeros,
             @RequestParam(required = false) List<String> villes,
-            @RequestParam(required = false) List<String> codePostals
-    ) {
+            @RequestParam(required = false) List<String> codePostals) {
 
-        Map<String, Object> body = new HashMap<>();
-        body.put("nom", nom);
-        body.put("prenom", prenom);
-        body.put("professionIds", professionIds);
+        PrestataireDTO dto = new PrestataireDTO();
+        dto.setNom(nom);
+        dto.setPrenom(prenom);
+        dto.setProfessionIds(professionIds);
 
-        List<Map<String, String>> adresses = new ArrayList<>();
-
+        List<AdresseDTO> adresses = new ArrayList<>();
         if (rues != null) {
             for (int i = 0; i < rues.size(); i++) {
-                Map<String, String> a = new HashMap<>();
-                a.put("rue", rues.get(i));
-                a.put("numero", numeros.get(i));
-                a.put("ville", villes.get(i));
-                a.put("codePostal", codePostals.get(i));
+                AdresseDTO a = new AdresseDTO();
+                a.setRue(rues.get(i));
+                a.setNumero(numeros.get(i));
+                a.setVille(villes.get(i));
+                a.setCodepostal(codePostals.get(i));
                 adresses.add(a);
             }
         }
+        dto.setAdresses(adresses);
 
-        body.put("adresses", adresses);
+        prestataireClient.update(id, dto);
 
-        restTemplate.put(
-                "http://localhost:8091/prestataires" + id,
-                body
-        );
-
-        return "redirect:/prestataires";
+        return "redirect:/rdv";
     }
 }
 

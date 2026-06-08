@@ -14,4 +14,5 @@ public class Professions {
     private Integer isValide;
 
     private Categories categories;
+    private Professions professions;
 }

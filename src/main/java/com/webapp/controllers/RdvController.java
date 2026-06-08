@@ -7,10 +7,7 @@ import com.webapp.services.form.rdvForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
@@ -86,6 +83,14 @@ public class RdvController {
         return mav;
     }
 
+    @PostMapping("/rdv/add")
+    public String createRdv(@ModelAttribute rdvForm form) {
+
+        rdvService.createRdv(form);
+
+        return "redirect:/rdv"; // ou ta page liste
+    }
+
     @GetMapping("/rdv/add")
     public String createForm(Model model) {
 
@@ -94,54 +99,6 @@ public class RdvController {
         model.addAttribute("prestataires", prestataireService.findAll());
         model.addAttribute("professions", professionService.findAll());
         model.addAttribute("adresses", adresseService.findAll());
-
-        return "edit-rdv";
-    }
-
-    @PostMapping("/rdv/add")
-    public String createRdv(RDV rdv,
-                            @RequestParam Integer prestataires,
-                            @RequestParam Integer professions,
-                            @RequestParam Integer adresses) {
-
-        rdv.setIsOK(1);
-
-        rdv.setPrestataires(prestataireService.findById(prestataires));
-        rdv.setProfessions(professionService.findById(professions));
-        rdv.setAdresses(adresseService.findById(adresses));
-
-        rdv.setUser(sessionService.sessionUser());
-
-        rdvService.createRdv(rdv);
-
-        return "redirect:/rdv";
-    }
-
-    @GetMapping("/rdv/edit/{email}")
-    public String editForm(@PathVariable String email, Model model) {
-
-
-        RDV rdv = (RDV) rdvService.getRdvByUser(email);
-
-
-        rdvForm form = new rdvForm();
-        form.setId(rdv.getId());
-        form.setMotif(rdv.getMotif());
-        form.setDateRdv(rdv.getDateRdv());
-        form.setPrestataireId(rdv.getPrestataires().getId());
-        form.setAdresseId(rdv.getAdresses().getId());
-        form.setProfessionId(rdv.getProfessions().getId());
-
-        // 🔥 injection dans la vue
-        model.addAttribute("rdvForm", form);
-
-        // 🔥 listes
-        model.addAttribute("prestataires", prestataireService.findAll());
-        model.addAttribute("professions", professionService.findAll());
-        model.addAttribute("adresses", adresseService.findAll());
-
-        // si tu veux afficher les infos en haut
-        model.addAttribute("rdv", rdv);
 
         return "edit-rdv";
     }

@@ -22,10 +22,10 @@ function addAdresse() {
     div.classList.add("adresse-item");
 
     div.innerHTML = `
-        <input type="text" name="rue" placeholder="Rue"/>
-        <input type="text" name="numero" placeholder="Numéro"/>
-        <input type="text" name="ville" placeholder="Ville"/>
-        <input type="text" name="codePostal" placeholder="Code postal"/>
+        <input type="text" name="rues" placeholder="Rue"/>
+        <input type="text" name="numeros" placeholder="Numéro"/>
+        <input type="text" name="villes" placeholder="Ville"/>
+        <input type="text" name="codePostals" placeholder="Code postal"/>
         <button type="button" onclick="this.parentElement.remove()">Supprimer</button>
     `;
 

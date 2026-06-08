@@ -38,10 +38,6 @@
               method="post"
               class="ContentBox2-detailRdv">
 
-            <form th:object="${rdvForm}"
-                  th:action="${rdv != null} ? @{'/rdv/update/' + ${rdv.id}} : @{/rdv/add}"
-                  method="post"
-                  class="ContentBox2-detailRdv">
 
 
 
@@ -135,7 +131,7 @@
                 </div>
 
 
-            </form>
+
 
 
         </form>
