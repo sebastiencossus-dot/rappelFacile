@@ -71,7 +71,7 @@ public class RdvController {
                 .toList();
 
         List<RDV> autres = rdvs.stream()
-                .filter(r -> r.getIsOK() == 2 && r.getDateRdv().toLocalDate().isAfter(today))
+                .filter(r -> r.getDateRdv().toLocalDate().isAfter(today))
                 .sorted(Comparator.comparing(RDV::getDateRdv)) // du plus proche au plus loin
                 .toList();
 
@@ -129,4 +129,16 @@ public class RdvController {
         return new ModelAndView("rdv-form", "rdv", rdv);
     }
 
+    @GetMapping("/rdv/{id}")
+    public ModelAndView detailRdv(@PathVariable Integer id) {
+
+        String email = sessionService.sessionUser().getEmail();
+        RDV rdv = msJpaClient.getRdv(id, email);
+
+        if (rdv == null) {
+            return new ModelAndView("redirect:/rdv");
+        }
+
+        return new ModelAndView("detailRdv", "rdv", rdv);
+    }
 }

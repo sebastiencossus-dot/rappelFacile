@@ -35,7 +35,13 @@ function addAdresse() {
 function toggleNouvelleAdresse() {
     const select = document.getElementById('adresse-select');
     const div = document.getElementById('nouvelle-adresse');
-    div.style.display = select.value === '' ? 'block' : 'none';
+    const inputs = div.querySelectorAll('input');
+
+    const isNouvelle = select.value === '';
+    div.style.display = isNouvelle ? 'block' : 'none';
+
+    // ← désactive les champs si cachés, ils ne seront pas soumis
+    inputs.forEach(input => input.disabled = !isNouvelle);
 }
 
 
