@@ -1,5 +1,6 @@
 package com.webapp.services;
 
+import com.webapp.models.PrestataireResponseDTO;
 import com.webapp.models.Prestataires;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class PrestataireService {
         this.client = client;
     }
 
-    public List<Prestataires> findAll() {
+    public List<PrestataireResponseDTO> findAll() {
         return client.findAll();
     }
 

@@ -1,6 +1,7 @@
 package com.webapp.services;
 
 import com.webapp.models.PrestataireDTO;
+import com.webapp.models.PrestataireResponseDTO;
 import com.webapp.models.Prestataires;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.List;
 public interface PrestataireClient {
 
     @GetMapping("/prestataires")
-    List<Prestataires> findAll();
+    List<PrestataireResponseDTO> findAll();
 
     @GetMapping("/prestataires/{id}")
     Prestataires findById(@PathVariable Integer id);

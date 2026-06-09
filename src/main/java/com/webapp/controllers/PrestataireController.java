@@ -1,9 +1,6 @@
 package com.webapp.controllers;
 
-import com.webapp.models.AdresseDTO;
-import com.webapp.models.PrestataireDTO;
-import com.webapp.models.Prestataires;
-import com.webapp.models.Professions;
+import com.webapp.models.*;
 import com.webapp.services.AdresseClient;
 import com.webapp.services.PrestataireClient;
 import com.webapp.services.ProfessionService;
@@ -13,10 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/prestataires")
@@ -112,6 +107,22 @@ public class PrestataireController {
         prestataireClient.update(id, dto);
 
         return "redirect:/rdv";
+    }
+
+    @GetMapping
+    public String listAll(Model model) {
+        List<PrestataireResponseDTO> prestataires = prestataireClient.findAll();
+
+        // Extraire toutes les catégories uniques
+        Set<String> categories = prestataires.stream()
+                .filter(p -> p.getCategories() != null)
+                .flatMap(p -> p.getCategories().stream())
+                .collect(Collectors.toCollection(LinkedHashSet::new));
+
+
+        model.addAttribute("prestataires", prestataires);
+        model.addAttribute("categories", categories);
+        return "prestataires";
     }
 }
 
