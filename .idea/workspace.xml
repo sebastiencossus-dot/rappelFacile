@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cbcd0b6-a52a-47b8-8989-9935d5532a0c" name="Changes" comment="page prestataire ok, page detailrdv ok" />
+    <list default="true" id="4cbcd0b6-a52a-47b8-8989-9935d5532a0c" name="Changes" comment="page prestataire ok, page detailrdv ok">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webApp" beforeDir="false" afterPath="$PROJECT_DIR$/webApp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webApp/src/main/java/com/webapp/repositories/ChartsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/webApp/src/main/java/com/webapp/repositories/ChartsRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="195" />
+    <option name="cachedIndexableFilesCount" value="191" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,7 +36,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/sebastiencossus-dot/flashcash.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/sebastiencossus-dot/rappelFacile.git&quot;,
     &quot;accountId&quot;: &quot;2d2c3f0f-1d95-4893-9dc1-3bf726252d79&quot;
   }
 }</component>
@@ -47,61 +51,61 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Docker.docker-compose.yml.consul: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.msjpa: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.mysql_db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.webapp: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "JUnit.MsjpaApplicationTests.executor": "Run",
-    "Maven.RappelFacile [clean].executor": "Run",
-    "Maven.RappelFacile [validate].executor": "Run",
-    "Maven.RappelFacile [verify].executor": "Run",
-    "Maven.configserver [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor": "Run",
-    "Maven.configserver [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor": "Run",
-    "Maven.msRdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor": "Run",
-    "Maven.msRdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor": "Run",
-    "Maven.msRdv [package].executor": "Run",
-    "Maven.msjpa [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor": "Run",
-    "Maven.msjpa [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor": "Run",
-    "Maven.msjpa [compile].executor": "Run",
-    "Maven.msjpa [package].executor": "Run",
-    "Maven.msjpa [validate].executor": "Run",
-    "Maven.msprof [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor": "Run",
-    "Maven.msprof [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor": "Run",
-    "Maven.msprof [package].executor": "Run",
-    "Maven.msrdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor": "Run",
-    "Maven.msrdv [package].executor": "Run",
-    "Maven.webapp [clean].executor": "Run",
-    "Maven.webapp [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor": "Run",
-    "Maven.webapp [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor": "Run",
-    "Maven.webapp [compile].executor": "Run",
-    "Maven.webapp [package].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.ConfigserverApplication.executor": "Run",
-    "Spring Boot.Main.executor": "Run",
-    "Spring Boot.MsRdvApplication.executor": "Run",
-    "Spring Boot.MsjpaApplication.executor": "Run",
-    "Spring Boot.MsprofApplication.executor": "Run",
-    "Spring Boot.WebappApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sebas/IdeaProjects/RappelFacile/msprof/src/main/java/com/msprof/Models",
-    "onboarding.tips.debug.path": "C:/Users/sebas/IdeaProjects/RappelFacile/msrappel/src/main/java/com/restTemplate/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker.docker-compose.yml.consul: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.msjpa: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.mysql_db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.webapp: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MsjpaApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RappelFacile [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RappelFacile [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RappelFacile [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.configserver [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.configserver [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msRdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msRdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msRdv [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msjpa [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msjpa [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msjpa [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msjpa [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msjpa [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msprof [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msprof [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msprof [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msrdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.msrdv [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.webapp [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.webapp [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.webapp [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.webapp [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.webapp [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MsRdvApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MsjpaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MsprofApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.WebappApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sebas/IdeaProjects/RappelFacile/msprof/src/main/java/com/msprof/Models&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/sebas/IdeaProjects/RappelFacile/msrappel/src/main/java/com/restTemplate/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sebas\IdeaProjects\RappelFacile\msprof\src\main\java\com\msprof\Models" />
@@ -121,7 +125,7 @@
       <recent name="com.msjpa.models" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MsRdvApplication">
+  <component name="RunManager" selected="Spring Boot.WebappApplication">
     <configuration name="MsRdvApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="msrdv" />
@@ -129,6 +133,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.msRdv.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsjpaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="msjpa" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msjpa.MsjpaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.msjpa.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,26 +196,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.msjpa: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="msjpa" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.WebappApplication" />
         <item itemvalue="Spring Boot.MsprofApplication" />
         <item itemvalue="Spring Boot.MsRdvApplication" />
+        <item itemvalue="Spring Boot.MsjpaApplication" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.msjpa: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781002100902</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="page prestataire ok, page detailrdv ok">
+      <option name="closed" value="true" />
+      <created>1781009867975</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1781009867975</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">
