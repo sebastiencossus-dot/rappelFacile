@@ -4,10 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cbcd0b6-a52a-47b8-8989-9935d5532a0c" name="Changes" comment="page prestataire ok, page detailrdv ok">
+    <list default="true" id="a944bd1e-eec6-4f0a-ae26-cd252069e1a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webApp" beforeDir="false" afterPath="$PROJECT_DIR$/webApp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webApp/src/main/java/com/webapp/repositories/ChartsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/webApp/src/main/java/com/webapp/repositories/ChartsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/java/com/configserver/ConfigserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/java/com/configserver/ConfigserverApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msadmin/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/msadmin/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msadmin/src/main/java/com/msadmin/MsadminApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/msadmin/src/main/java/com/msadmin/MsadminApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msadmin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msadmin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msadmin/src/test/java/com/msadmin/MsadminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/msadmin/src/test/java/com/msadmin/MsadminApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msprof/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/msprof/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msprof/src/main/java/com/msprof/MsprofApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/msprof/src/main/java/com/msprof/MsprofApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msprof/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msprof/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msprof/src/test/java/com/msprof/MsprofApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/msprof/src/test/java/com/msprof/MsprofApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msrappel/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/msrappel/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msrappel/src/main/java/com/msrappel/MsrappelApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/msrappel/src/main/java/com/msrappel/MsrappelApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msrappel/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msrappel/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msrappel/src/test/java/com/msrappel/MsrappelApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/msrappel/src/test/java/com/msrappel/MsrappelApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msrdv/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/msrdv/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msrdv/src/main/java/com/msRdv/MsRdvApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/msrdv/src/main/java/com/msRdv/MsRdvApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msrdv/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msrdv/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,195 +37,52 @@
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="191" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="HTML File" />
-      </list>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "sebastiencossus-dot"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sebastiencossus-dot/rappelFacile.git",
+    "accountId": "2d2c3f0f-1d95-4893-9dc1-3bf726252d79"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/webApp" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;sebastiencossus-dot&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/sebastiencossus-dot/rappelFacile.git&quot;,
-    &quot;accountId&quot;: &quot;2d2c3f0f-1d95-4893-9dc1-3bf726252d79&quot;
-  }
-}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="3CKxTt1CFdoSGujy6u59VOclCw8" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="3Ew3hGVikQreeQE3Wo5EOXY5QfB" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Docker.docker-compose.yml.consul: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.msjpa: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.mysql_db: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.webapp: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MsjpaApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RappelFacile [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RappelFacile [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RappelFacile [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.configserver [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.configserver [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msRdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msRdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msRdv [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msjpa [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msjpa [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msjpa [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msjpa [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msjpa [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msprof [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msprof [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msprof [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msrdv [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.msrdv [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.webapp [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.webapp [com.google.cloud.tools:jib-maven-plugin:3.3.2:build].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.webapp [com.google.cloud.tools:jib-maven-plugin:3.3.2:dockerBuild].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.webapp [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.webapp [package].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MsRdvApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MsjpaApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MsprofApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.WebappApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sebas/IdeaProjects/RappelFacile/msprof/src/main/java/com/msprof/Models&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/sebas/IdeaProjects/RappelFacile/msrappel/src/main/java/com/restTemplate/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sebas/IdeaProjects/rappelFacile"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\sebas\IdeaProjects\RappelFacile\msprof\src\main\java\com\msprof\Models" />
-      <recent name="C:\Users\sebas\IdeaProjects\RappelFacile\msrdv\src\main\java\com\msRdv\models" />
-      <recent name="C:\Users\sebas\IdeaProjects\RappelFacile\msjpa\src\main\java\com\msjpa" />
-      <recent name="C:\Users\sebas\Desktop\Projet\RappelFacile" />
-      <recent name="C:\Users\sebas\Desktop\Projet\RappelFacile\WebApp\src\main\resources\static\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\sebas\Desktop\Projet\RappelFacile" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.msRdv.services.form" />
-      <recent name="com.msjpa.services.Form" />
-      <recent name="com.webapp.models" />
-      <recent name="com.msprof.Models" />
-      <recent name="com.msjpa.models" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Spring Boot.WebappApplication">
-    <configuration name="MsRdvApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="msrdv" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msRdv.MsRdvApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.msRdv.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsjpaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="msjpa" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msjpa.MsjpaApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.msjpa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsprofApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="msprof" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msprof.MsprofApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.msprof.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WebappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="webapp" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.webapp.WebappApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.webapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.WebappApplication" />
-        <item itemvalue="Spring Boot.MsprofApplication" />
-        <item itemvalue="Spring Boot.MsRdvApplication" />
-        <item itemvalue="Spring Boot.MsjpaApplication" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      </list>
-    </recent_temporary>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -215,218 +92,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4cbcd0b6-a52a-47b8-8989-9935d5532a0c" name="Changes" comment="" />
-      <created>1776148076335</created>
+      <changelist id="a944bd1e-eec6-4f0a-ae26-cd252069e1a9" name="Changes" comment="" />
+      <created>1781075923743</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1776148076335</updated>
+      <updated>1781075923743</updated>
     </task>
-    <task id="LOCAL-00001" summary="first commit with login, logon and first page">
-      <option name="closed" value="true" />
-      <created>1776175569704</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1776175569704</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Debut de mise en dynamique avec thymleaf">
-      <option name="closed" value="true" />
-      <created>1777282468680</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1777282468681</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Correction nommage, ajout consul, configserver, et bdd externe">
-      <option name="closed" value="true" />
-      <created>1778571823244</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1778571823245</updated>
-    </task>
-    <task id="LOCAL-00004" summary="ajout msRdv avec config et class importer dans las fichiers de webapp">
-      <option name="closed" value="true" />
-      <created>1778574263698</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1778574263698</updated>
-    </task>
-    <task id="LOCAL-00005" summary="ok, tri et affichage sur /rdv ok,">
-      <option name="closed" value="true" />
-      <created>1778851721907</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1778851721907</updated>
-    </task>
-    <task id="LOCAL-00006" summary="correction prestataire pour onetomany professions et redirection /rdv a la connexoiion">
-      <option name="closed" value="true" />
-      <created>1779028236646</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1779028236648</updated>
-    </task>
-    <task id="LOCAL-00007" summary="accueil presque ok, debut du form add rdv + debut ajout des champ variable sur le form">
-      <option name="closed" value="true" />
-      <created>1779879334794</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1779879334794</updated>
-    </task>
-    <task id="LOCAL-00008" summary="accueil presque ok, debut du form add rdv + debut ajout des champ variable sur le form">
-      <option name="closed" value="true" />
-      <created>1780041921662</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1780041921662</updated>
-    </task>
-    <task id="LOCAL-00009" summary="ajout form pour ajout prestataire">
-      <option name="closed" value="true" />
-      <created>1780404384482</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1780404384482</updated>
-    </task>
-    <task id="LOCAL-00010" summary="work to 03 juin">
-      <option name="closed" value="true" />
-      <created>1780492065425</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1780492065425</updated>
-    </task>
-    <task id="LOCAL-00011" summary="ok , prestataire avec ajout nom prenom">
-      <option name="closed" value="true" />
-      <created>1780918169065</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1780918169065</updated>
-    </task>
-    <task id="LOCAL-00012" summary="page prestataire ok, page detailrdv ok">
-      <option name="closed" value="true" />
-      <created>1781002100902</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1781002100902</updated>
-    </task>
-    <task id="LOCAL-00013" summary="page prestataire ok, page detailrdv ok">
-      <option name="closed" value="true" />
-      <created>1781009867975</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1781009867975</updated>
-    </task>
-    <task id="LOCAL-00014" summary="page prestataire ok, page detailrdv ok">
-      <option name="closed" value="true" />
-      <created>1781073777830</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1781073777830</updated>
-    </task>
-    <task id="LOCAL-00015" summary="page prestataire ok, page detailrdv ok">
-      <option name="closed" value="true" />
-      <created>1781074329981</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1781074329981</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
     <servers />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
-    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
-    <option featureType="dependencySupport" implementationName="java:org.testng:testng" />
-    <option featureType="dependencySupport" implementationName="java:io.projectreactor:reactor-core" />
-    <option featureType="dependencySupport" implementationName="executable:kubectl" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework.cloud:spring-cloud-context" />
-    <option featureType="dependencySupport" implementationName="java:org.hibernate.validator:hibernate-validator" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
-    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
-    <option featureType="dependencySupport" implementationName="executable:docker" />
-    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
-    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
-    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit with login, logon and first page" />
-    <MESSAGE value="Debut de mise en dynamique avec thymleaf" />
-    <MESSAGE value="Correction nommage, ajout consul, configserver, et bdd externe" />
-    <MESSAGE value="ajout msRdv avec config et class importer dans las fichiers de webapp" />
-    <MESSAGE value="ok, tri et affichage sur /rdv ok," />
-    <MESSAGE value="correction prestataire pour onetomany professions et redirection /rdv a la connexoiion" />
-    <MESSAGE value="accueil presque ok, debut du form add rdv + debut ajout des champ variable sur le form" />
-    <MESSAGE value="ajout form pour ajout prestataire" />
-    <MESSAGE value="work to 03 juin" />
-    <MESSAGE value="ok , prestataire avec ajout nom prenom" />
-    <MESSAGE value="page prestataire ok, page detailrdv ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="page prestataire ok, page detailrdv ok" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/configserver/src/main/java/com/restTemplate/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../Webapp/src/main/java/com/restTemplate/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/msrdv/src/main/java/com/restTemplate/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/msjpa/src/main/java/com/restTemplate/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/msjpa/src/main/java/com/msjpa/controllers/UserController.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/msadmin/src/main/java/com/restTemplate/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/msprof/src/main/java/com/restTemplate/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/msrappel/src/main/java/com/restTemplate/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.springframework.beans.BeanInstantiationException" package="org.springframework.beans" />
-          <option name="timeStamp" value="4" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="feign.FeignException$InternalServerError" package="feign" />
-          <option name="timeStamp" value="5" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

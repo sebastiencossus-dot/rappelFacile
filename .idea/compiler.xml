@@ -2,13 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="webapp" />
         <module name="msjpa" />
+        <module name="webapp" />
         <module name="msadmin" />
         <module name="msprof" />
         <module name="msrdv" />
@@ -16,15 +15,10 @@
         <module name="msrappel" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="flash-cash" target="17" />
-      <module name="Webapp (2) (com.restTemplate)" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configserver" options="-parameters" />
-      <module name="flash-cash" options="-parameters" />
       <module name="msadmin" options="-parameters" />
       <module name="msjpa" options="-parameters" />
       <module name="msprof" options="-parameters" />
