@@ -8,3 +8,6 @@ package com.webapp.repositories;
 //@Repository
 //public interface ChartsRepository extends JpaRepository<User, Integer> {
 //}
+
+
+String phrase = "ajout de text pour pouvoir commit and push";
